@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="/main/assets/css/style.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <title>Header</title>
+</head>
+
+<body>
+  <main>
+
+
+    <section class="preheader gradient-primary padding-y-sm">
+      <div class="adaptive-container">
+        <div class="flex flex-row gap-md width-100% justify-between text-sm">
+          <div class="flex">
+            <p class="color-white"><a class="color-white" href="tel:+971 (0)4 871 6718">+971 (0)4 871 6718</a> <span
+                class="margin-x-xs">|</span> <a class="color-white"
+                href="mailto:sales@vitalcertificates.ae">sales@vitalcertificates.ae</a></p>
+          </div>
+          <div class="flex">
+            <p class="color-white">Some Text</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <header class="mega-nav mega-nav--mobile mega-nav--desktop@md position-relative js-mega-nav" data-hover="on">
+      <div class="mega-nav__container">
+        <!-- 👇 logo -->
+        <a href="#0" class="mega-nav__logo">
+          <svg width="104" height="30" viewBox="0 0 104 30">
+            <title>Go to homepage</title>
+            <path
+              d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z"
+              fill="var(--color-contrast-higher)" />
+            <circle cx="15" cy="15" r="15" fill="var(--color-primary)" />
+          </svg>
+        </a>
+
+        <!-- 👇 icon buttons --mobile -->
+        <div class="mega-nav__icon-btns mega-nav__icon-btns--mobile flex gap-md">
+          
+          <img src="/main/assets/img/icon-person2.svg" alt="Account" class="icon icon--md">
+          <img src="/main/assets/img/icon-basket.svg" alt="Basket" class="icon icon--sm">
+
+          <button class="reset mega-nav__icon-btn mega-nav__icon-btn--menu js-tab-focus" aria-label="Toggle menu"
+            aria-controls="mega-nav-navigation">
+            <svg class="icon" viewBox="0 0 24 24">
+              <g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10"
+                stroke-width="2">
+                <path d="M1 6h22" />
+                <path d="M1 12h22" />
+                <path d="M1 18h22" />
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mega-nav__nav js-mega-nav__nav" id="mega-nav-navigation" role="navigation" aria-label="Main">
+          <div class="mega-nav__nav-inner">
+            <ul class="mega-nav__items">
+              <li class="mega-nav__label">Menu</li>
+
+              <!-- 👇 layout 1 -> multiple lists -->
+              <li class="mega-nav__item js-mega-nav__item">
+                <button class="reset mega-nav__control js-mega-nav__control js-tab-focus">
+                  Attestation
+                  <i class="mega-nav__arrow-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16">
+                      <g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+                        stroke-miterlimit="10" stroke-width="2">
+                        <path d="M2 2l12 12" />
+                        <path d="M14 2L2 14" />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+
+                <div class="mega-nav__sub-nav-wrapper">
+                  <div class="mega-nav__sub-nav mega-nav__sub-nav--layout-2">
+                    <ul class="mega-nav__sub-items">
+                      <li class="mega-nav__label">Europe</li>
+                      <li class="mega-nav__sub-item"><img
+                          src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/united-kingdom.svg"
+                          alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">UK Documents</a>
+                      </li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/ireland.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Irish Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/france.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">French Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/italy.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Italian Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/spain.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Spanish Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/portugal.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Portuguese Documents</a>
+                      </li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/germany.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">German Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/netherlands.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Netherlands Documents</a>
+                      </li>
+
+                    </ul>
+
+                    <ul class="mega-nav__sub-items">
+                      <li class="mega-nav__label">Asia/Oceania</li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/china.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Chinese Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/india.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Indian Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/singapore.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Singaporean Documents</a>
+                      </li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/turkey.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Turkish Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/russia.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Russian Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/australia.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Australian Documents</a>
+                      </li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/new-zealand.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">New Zealand Documents</a>
+                      </li>
+                    </ul>
+
+                    <ul class="mega-nav__sub-items">
+                      <li class="mega-nav__label ">Other</li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/south-africa.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">South African Documents</a>
+                      </li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/united-states-of-america.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">US Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/canada.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">Canadian Documents</a></li>
+                      <li class="mega-nav__sub-item"><img
+                        src="https://vitalconsular-blog.b-cdn.net/TEFL%20Project/flags/british-virgin-islands.svg"
+                        alt="uk flag" class="icon icon--sm margin-right-xs"><a href="#0" class="mega-nav__sub-link">BVI Documents</a></li>
+                    </ul>
+
+
+                    <div class="mega-nav__card width-100% max-width-xs margin-x-auto">
+                      <a href="#0" class="block radius-lg overflow-hidden">
+                        <figure>
+                          <img class="block width-100%" src="/main/assets/img/quote-request-2.svg"
+                            alt="Request a Quote">
+                        </figure>
+                      </a>
+
+                      <div class="margin-top-sm">
+                        <h3 class="text-base font-secondary text-center">Don't see your country on the list?</h3>
+                        <a href="/" class="btn btn--accent btn--small margin-top-sm">Request a Quote</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- 👇 layout 2 -> tabbed content -->
+              <li class="mega-nav__item js-mega-nav__item">
+                <button class="reset mega-nav__control js-mega-nav__control js-tab-focus">
+                  Certificates
+                  <i class="mega-nav__arrow-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 16 16">
+                      <g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+                        stroke-miterlimit="10" stroke-width="2">
+                        <path d="M2 2l12 12" />
+                        <path d="M14 2L2 14" />
+                      </g>
+                    </svg>
+                  </i>
+                </button>
+
+                <div class="mega-nav__sub-nav-wrapper">
+                  <div class="mega-nav__sub-nav mega-nav__sub-nav--layout-1">
+                    <!-- 👇 links - visible on mobile -->
+                    <ul class="mega-nav__sub-items">
+                      <li class="mega-nav__sub-item">
+                        <a href="#0" class="mega-nav__sub-link">
+                          <span class="flex items-center gap-xs">
+                            <img class="block width-lg height-lg radius-50% object-cover"
+                              src="/main/assets/img/birth-cert.jpg" alt="Birth Certificates">
+                            <i>Birth Certificates</i>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li class="mega-nav__sub-item">
+                        <a href="#0" class="mega-nav__sub-link">
+                          <span class="flex items-center gap-xs">
+                            <img class="block width-lg height-lg radius-50% object-cover"
+                              src="/main/assets/img/marriage-cert.jpg" alt="Marriage Certificates">
+                            <i>Marriage Certificates</i>
+                          </span>
+                        </a>
+                      </li>
+
+                      <li class="mega-nav__sub-item">
+                        <a href="#0" class="mega-nav__sub-link">
+                          <span class="flex items-center gap-xs">
+                            <img class="block width-lg height-lg radius-50% object-cover"
+                              src="/main/assets/img/death-cert.jpg" alt="Death Certificates">
+                            <i>Death Certificates</i>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <!-- 👇 tabs - visible on desktop -->
+                    <div class="mega-nav__tabs grid gap-lg js-tabs" data-tabs-layout="vertical">
+                      <ul class="col-4 mega-nav__tabs-controls js-tabs__controls" aria-label="Select a product">
+                        <li>
+                          <a href="#tabProduct1" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+                            <span class="flex items-center gap-xs">
+                              <img class="block width-lg height-lg radius-50% object-cover"
+                                src="/main/assets/img/birth-cert.jpg" alt="Image description">
+
+                              <i class="margin-right-xxxs">Birth Certificates</i>
+
+                              <svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+                                  stroke-miterlimit="10" stroke-width="1" />
+                              </svg>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#tabProduct2" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+                            <span class="flex items-center gap-xs">
+                              <img class="block width-lg height-lg radius-50% object-cover"
+                                src="/main/assets/img/marriage-cert.jpg" alt="Image description">
+
+                              <i class="margin-right-xxxs">Marriage Certificates</i>
+
+                              <svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+                                  stroke-miterlimit="10" stroke-width="1" />
+                              </svg>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#tabProduct3" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+                            <span class="flex items-center gap-xs">
+                              <img class="block width-lg height-lg radius-50% object-cover"
+                                src="/main/assets/img/death-cert.jpg" alt="Image description">
+
+                              <i class="margin-right-xxxs">Death Certificates</i>
+
+                              <svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+                                  stroke-miterlimit="10" stroke-width="1" />
+                              </svg>
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div class="col-8 js-tabs__panels">
+                        <section id="tabProduct1" class="mega-nav__tabs-panel js-tabs__panel">
+                          <div class="grid gap-xl width-100%">
+
+                            <div class="col-6">
+                              <h2
+                                class="text-lg font-semibold color-contrast-higher letter-spacing-md border-bottom-accent">
+                                Birth Certificates</h2>
+                              <p class="color-contrast-medium margin-top-sm line-height-body">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit.
+                                Amet, quaerat.</p>
+                              <a href="#0" class="btn btn--accent btn--small margin-top-sm">Learn More</a>
+                            </div>
+
+                            <div class="col-6">
+                              <a href="#0" class="mega-nav__tabs-img margin-bottom-md">
+                                <img class="width-100% radius shadow-sm" src="/main/assets/img/birth-cert.jpg"
+                                  alt="Birth Certificates">
+                              </a>
+                            </div>
+
+                          </div>
+                        </section>
+
+                        <section id="tabProduct2" class="mega-nav__tabs-panel js-tabs__panel">
+                          <div class="grid gap-xl width-100%">
+
+                            <div class="col-6">
+                              <h2
+                                class="text-lg font-semibold color-contrast-higher letter-spacing-md border-bottom-accent">
+                                Marriage Certificates</h2>
+                              <p class="color-contrast-medium margin-top-sm line-height-body">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit.
+                                Amet, quaerat.</p>
+                              <a href="#0" class="btn btn--accent btn--small margin-top-sm">Learn More</a>
+                            </div>
+
+                            <div class="col-6">
+                              <a href="#0" class="mega-nav__tabs-img margin-bottom-md">
+                                <img class="width-100% radius shadow-sm" src="/main/assets/img/marriage-cert.jpg"
+                                  alt="Marriage Certificates">
+                              </a>
+                            </div>
+
+                          </div>
+                        </section>
+
+                        <section id="tabProduct3" class="mega-nav__tabs-panel js-tabs__panel">
+                          <div class="grid gap-xl width-100%">
+
+                            <div class="col-6">
+                              <h2
+                                class="text-lg font-semibold color-contrast-higher letter-spacing-md border-bottom-accent">
+                                Death Certificates</h2>
+                              <p class="color-contrast-medium margin-top-sm line-height-body">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit.
+                                Amet, quaerat.</p>
+                              <a href="#0" class="btn btn--accent btn--small margin-top-sm">Learn More</a>
+                            </div>
+
+                            <div class="col-6">
+                              <a href="#0" class="mega-nav__tabs-img margin-bottom-md">
+                                <img class="width-100% radius shadow-sm" src="/main/assets/img/death-cert.jpg"
+                                  alt="Death Certificates">
+                              </a>
+                            </div>
+
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <!-- 👇 link -->
+              <li class="mega-nav__item">
+                <a href="#0" class="mega-nav__control">Translation</a>
+              </li>
+
+                <!-- 👇 layout 3 -> single list -->
+                <li class="mega-nav__item js-mega-nav__item">
+                  <button class="reset mega-nav__control js-mega-nav__control js-tab-focus">
+                    Company
+                    <i class="mega-nav__arrow-icon" aria-hidden="true">
+                      <svg class="icon" viewBox="0 0 16 16">
+                        <g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+                          stroke-miterlimit="10" stroke-width="2">
+                          <path d="M2 2l12 12" />
+                          <path d="M14 2L2 14" />
+                        </g>
+                      </svg>
+                    </i>
+                  </button>
+  
+                  <div class="mega-nav__sub-nav-wrapper">
+                    <div class="mega-nav__sub-nav mega-nav__sub-nav--layout-4">
+                      <ul class="mega-nav__sub-items grid gap-lg">
+                        <div class="col-6@md">
+                          <li class="mega-nav__label">Info</li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">About Us</a></li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Contact Us</a></li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Service Guarantee</a>
+                          </li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Code of Business
+                              Conduct</a></li>
+                              <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Frequently Asked Questions</a></li>
+                        </div>
+                        <div class="col-6@md">
+                          <li class="mega-nav__label">Policies</li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Privacy Policy</a></li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Cookie Policy</a></li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Bribery Policy</a></li>
+                          <li class="mega-nav__sub-item flex-center"><a href="#0" class="mega-nav__sub-link">Terms & Conditions</a>
+                          </li>
+  
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+               <!-- 👇 link -->
+               <li class="mega-nav__item">
+                <a href="#0" class="mega-nav__control">Request a Quote</a>
+              </li>
+
+
+            </ul>
+
+            <ul class="mega-nav__items">
+              <!-- 👇 icon buttons --desktop -->
+              <li class="mega-nav__icon-btns mega-nav__icon-btns--desktop flex gap-md">
+
+                <img src="/main/assets/img/icon-person2.svg" alt="Account" class="icon icon--md">
+                <img src="/main/assets/img/icon-basket.svg" alt="Basket" class="icon icon--sm">
+
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+
+   
+      </div>
+    </header>
+
+
+  </main>
+  <script src="/main/assets/js/scripts.js"></script>
+</body>
+
+</html>
