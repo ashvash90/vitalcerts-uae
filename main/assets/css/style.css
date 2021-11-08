@@ -99,6 +99,20 @@
   --sub-gap-x: var(--space-md);
 }
 
+.gap-y-xs {
+  --gap-y: var(--space-xs);
+}
+.gap-y-xs > * {
+  --sub-gap-y: var(--space-xs);
+}
+
+.gap-y-md {
+  --gap-y: var(--space-md);
+}
+.gap-y-md > * {
+  --sub-gap-y: var(--space-md);
+}
+
 .col-4 {
   --span: 4;
 }
@@ -163,7 +177,7 @@
 }
 
 html, body, div, span, object, iframe,
-h1, h2, h3, p,
+h1, h2, h3, h4, p,
 a, img, s, sub, var,
 b, i, ul, li, embed,
 figure, header,
@@ -268,7 +282,7 @@ body {
   font-weight: var(--body-font-weight, normal);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: var(--color-contrast-higher, #0d1317);
   line-height: var(--heading-line-height, 1.2);
   font-weight: var(--heading-font-weight, 700);
@@ -286,6 +300,10 @@ h3 {
   font-size: var(--text-lg, 1.375rem);
 }
 
+h4 {
+  font-size: var(--text-md, 1.125rem);
+}
+
 a, .link {
   color: var(--color-primary, #4827ec);
   text-decoration: underline;
@@ -295,11 +313,11 @@ s {
   text-decoration: line-through;
 }
 
-.text-component h1, .text-component h2, .text-component h3 {
+.text-component h1, .text-component h2, .text-component h3, .text-component h4 {
   line-height: calc(var(--heading-line-height) * var(--line-height-multiplier, 1));
   margin-bottom: calc(var(--space-unit) * 0.3125 * var(--text-space-y-multiplier, 1));
 }
-.text-component h2, .text-component h3 {
+.text-component h2, .text-component h3, .text-component h4 {
   margin-top: calc(var(--space-unit) * 0.9375 * var(--text-space-y-multiplier, 1));
 }
 .text-component p, .text-component ul li {
@@ -522,6 +540,10 @@ s {
   margin-right: auto;
 }
 
+.padding-sm {
+  padding: var(--space-sm);
+}
+
 .padding-top-md {
   padding-top: var(--space-md);
 }
@@ -530,8 +552,12 @@ s {
   padding-top: var(--space-xl);
 }
 
-.padding-bottom-lg {
-  padding-bottom: var(--space-lg);
+.padding-bottom-xl {
+  padding-bottom: var(--space-xl);
+}
+
+.padding-bottom-xxl {
+  padding-bottom: var(--space-xxl);
 }
 
 .padding-y-sm {
@@ -569,8 +595,20 @@ s {
   font-size: var(--text-xxxl, 2.5rem);
 }
 
+.text-xxxxl {
+  font-size: var(--text-xxxxl, 3rem);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 .letter-spacing-md {
   letter-spacing: 0.05em;
+}
+
+.letter-spacing-lg {
+  letter-spacing: 0.1em;
 }
 
 .font-medium {
@@ -579,6 +617,14 @@ s {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-primary {
+  font-family: var(--font-primary);
 }
 
 .text-center {
@@ -601,12 +647,20 @@ s {
   color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--color-o, 1));
 }
 
+.color-contrast-high {
+  color: hsla(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-l), var(--color-o, 1));
+}
+
 .color-contrast-higher {
   color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--color-o, 1));
 }
 
 .color-primary-dark {
   color: hsla(var(--color-primary-dark-h), var(--color-primary-dark-s), var(--color-primary-dark-l), var(--color-o, 1));
+}
+
+.color-primary {
+  color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--color-o, 1));
 }
 
 .color-white {
@@ -654,7 +708,7 @@ s {
 }
 
 @media (min-width: 48rem) {
-   .max-width-adaptive-md {
+  .max-width-adaptive-sm, .max-width-adaptive-md {
     max-width: 48rem;
   }
 }
@@ -681,6 +735,10 @@ s {
   position: relative;
 }
 
+.z-index-2 {
+  z-index: 2;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -701,8 +759,16 @@ s {
   border-radius: 50%;
 }
 
- [class^=bg-], [class*=" bg-"] {
+.bg, [class^=bg-], [class*=" bg-"] {
   --bg-o: 1;
+}
+
+.bg {
+  background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), var(--bg-o));
+}
+
+.bg-primary {
+  background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--bg-o, 1));
 }
 
 .object-cover {
@@ -925,6 +991,11 @@ body {
   -moz-osx-font-smoothing: auto;
 }
 
+.bg-primary {
+  background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--bg-o, 1));
+  color: white;
+}
+
 @media (min-width: 64rem) {
   :root, * {
     --space-xxxxs: calc(0.1875 * var(--space-unit));
@@ -987,6 +1058,10 @@ body {
   font-family: var(--font-primary);
 }
 
+.font-primary {
+  font-family: var(--font-primary);
+}
+
 .font-secondary {
   font-family: var(--font-secondary);
 }
@@ -1003,19 +1078,21 @@ h1, h2 {
   font-weight: 500;
 }
 
-h3 {
+h3, h4 {
   font-family: var(--font-primary);
   font-weight: 600;
 }
 
 .text-component h1,
 .text-component h2,
-.text-component h3 {
+.text-component h3,
+.text-component h4 {
   line-height: calc( var(--heading-line-height) * var(--line-height-multiplier, 1) );
   margin-bottom: calc( var(--space-unit) * 0.25 * var(--text-vspace-multiplier, 1) );
 }
 .text-component h2,
-.text-component h3 {
+.text-component h3,
+.text-component h4 {
   margin-top: calc( var(--space-unit) * 0.75 * var(--text-vspace-multiplier, 1) );
 }
 .text-component p,
@@ -1127,6 +1204,9 @@ a.btn:hover {
 .radius {
   border-radius: var(--radius);
 }
+.radius--top {
+  border-radius: var(--radius-top);
+}
 
 .highlight-primary {
   background-color: var(--color-primary);
@@ -1149,8 +1229,8 @@ a.btn:hover {
   line-height: 1.6 !important;
 }
 
-.text-gradient--primary-accent {
-  background: linear-gradient(to right, var(--color-primary-dark), var(--color-accent-light));
+.text-gradient--p-a-light {
+  background: linear-gradient(to right, var(--color-primary-light), var(--color-accent-light));
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1163,6 +1243,13 @@ a.btn:hover {
   padding: 0.5em 0;
 }
 
+.border-bottom-contrast-high {
+  border-bottom: 2.5px solid;
+  -o-border-image: linear-gradient(45deg, var(--color-contrast-high), transparent) 1;
+     border-image: linear-gradient(45deg, var(--color-contrast-high), transparent) 1;
+  padding: 0.5em 0;
+}
+
 .adaptive-container {
   width: var(--container-width) !important;
   max-width: var(--container-max-width);
@@ -1172,9 +1259,9 @@ a.btn:hover {
 
 /* -------------------------------- 
 
-File#: _1_background-decoration-v3
-Title: Background Decoration v3
-Descr: A collection of geometry background decorations
+File#: _1_background-decoration
+Title: Background Decoration
+Descr: A collection of background effects
 Usage: codyhouse.co/license
 
 -------------------------------- */
@@ -1245,6 +1332,9 @@ Usage: codyhouse.co/license
 }
 .gradient-contrast--white-tr {
   background-image: linear-gradient(to top right, var(--color-white), #f1f2f3);
+}
+.gradient-contrast--white-tb {
+  background-image: linear-gradient(to bottom, var(--color-white), #f1f2f3);
 }
 .gradient-contrast--light {
   background-image: linear-gradient(to bottom left, var(--color-contrast-lower), var(--color-contrast-medium));
