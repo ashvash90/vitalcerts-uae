@@ -936,8 +936,8 @@ s {
   --border-width: 3px;
 }
 
-.border-bg-dark {
-  border-color: hsla(var(--color-bg-dark-h), var(--color-bg-dark-s), var(--color-bg-dark-l), var(--border-o, 1));
+.border-primary-darker {
+  border-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--border-o, 1));
 }
 
 .radius-lg {
@@ -956,16 +956,12 @@ s {
   background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), var(--bg-o));
 }
 
-.bg-contrast-lower {
-  background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--bg-o, 1));
+.bg-contrast-medium {
+  background-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--bg-o, 1));
 }
 
-.bg-contrast-low {
-  background-color: hsla(var(--color-contrast-low-h), var(--color-contrast-low-s), var(--color-contrast-low-l), var(--bg-o, 1));
-}
-
-.bg-contrast-high {
-  background-color: hsla(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-l), var(--bg-o, 1));
+.bg-primary-darker {
+  background-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
 }
 
 .bg-primary {
@@ -1044,6 +1040,14 @@ s {
   --color-primary-lighter-h: 220;
   --color-primary-lighter-s: 45%;
   --color-primary-lighter-l: 50%;
+  --color-primary-superlight: hsl(220, 45%, 90%);
+  --color-primary-superlight-h: 220;
+  --color-primary-superlight-s: 45%;
+  --color-primary-superlight-l: 90%;
+  --color-primary-superlighter: hsl(220, 45%, 95%);
+  --color-primary-superlighter-h: 220;
+  --color-primary-superlighter-s: 45%;
+  --color-primary-superlighter-l: 95%;
   --color-accent-darker: hsl(341, 65%, 32%);
   --color-accent-darker-h: 341;
   --color-accent-darker-s: 65%;
@@ -1218,6 +1222,10 @@ body {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
+.bg-primary-darker {
+  background-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
+  color: white;
+}
 
 .bg-primary {
   background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--bg-o, 1));
@@ -1228,16 +1236,12 @@ body {
   background-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), var(--bg-o, 1));
 }
 
-.bg-contrast-high {
-  background-color: hsla(var(--color-contrast-high-h), var(--color-contrast-high-s), var(--color-contrast-high-l), var(--bg-o, 1));
+.bg-contrast-medium {
+  background-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--bg-o, 1));
 }
 
-.bg-contrast-low {
-  background-color: hsla(var(--color-contrast-low-h), var(--color-contrast-low-s), var(--color-contrast-low-l), var(--bg-o, 1));
-}
-
-.bg-contrast-lower {
-  background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--bg-o, 1));
+.border-primary-darker {
+  border-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
 }
 
 @media (min-width: 64rem) {
@@ -1466,6 +1470,12 @@ a.btn:hover {
 :root {
   --container-width: 1280px;
   --container-max-width: 90vw;
+  --color-primary-superlight: hsl(220, 45%, 90%);
+  --color-primary-superlighter: hsl(220, 45%, 95%);
+}
+
+.bg-primary-superlighter {
+  background-color: var(--color-primary-superlighter);
 }
 
 .radius {
@@ -1866,7 +1876,7 @@ Usage: codyhouse.co/license
   left: calc(-1 * var(--v-timeline-triangle-size) + 1px);
   height: var(--v-timeline-triangle-size);
   width: var(--v-timeline-triangle-size);
-  background-color: inherit;
+  background-color: var(--color-white);
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
 }
