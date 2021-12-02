@@ -122,6 +122,13 @@
   --sub-gap-x: var(--space-md);
 }
 
+.gap-y-xxxs {
+  --gap-y: var(--space-xxxs);
+}
+.gap-y-xxxs > * {
+  --sub-gap-y: var(--space-xxxs);
+}
+
 .gap-y-xs {
   --gap-y: var(--space-xs);
 }
@@ -158,6 +165,12 @@
  .col-4, .col-6, .col-8 {
   flex-basis: calc(((100% - (var(--grid-columns) - var(--gap-modifier, 1)) * var(--sub-gap-x)) * var(--span) / var(--grid-columns)) + (var(--span) - 1) * var(--sub-gap-x));
   max-width: calc(((100% - (var(--grid-columns) - var(--gap-modifier, 1)) * var(--sub-gap-x)) * var(--span) / var(--grid-columns)) + (var(--span) - 1) * var(--sub-gap-x));
+}
+
+.col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 32rem) {
@@ -241,8 +254,10 @@
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, p,
-a, img, s, sub, var,
-b, i, ul, li, embed,
+a, img, s,
+small, sub, var,
+b, i, ul, li,
+table, tbody, thead, tr, th, td, details, embed,
 figure, header,
 menu, nav, section, summary,
 time, audio, video {
@@ -259,7 +274,7 @@ body {
   background-color: var(--color-bg, white);
 }
 
- figure, header, menu, nav, section, main {
+ details, figure, header, menu, nav, section, main {
   display: block;
 }
 
@@ -281,6 +296,11 @@ button, select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 img, video, svg {
@@ -365,6 +385,10 @@ h3 {
 
 h4 {
   font-size: var(--text-md, 1.125rem);
+}
+
+small {
+  font-size: var(--text-sm, 0.75rem);
 }
 
 a, .link {
@@ -524,6 +548,10 @@ s {
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-center {
@@ -716,6 +744,14 @@ s {
   padding-bottom: var(--space-xxl);
 }
 
+ .text-unit-em {
+  font-size: var(--text-unit);
+}
+
+.text-unit-em {
+  --text-unit: 1em;
+}
+
 .text-sm {
   font-size: var(--text-sm, 0.75rem);
 }
@@ -734,6 +770,10 @@ s {
 
 .text-xl {
   font-size: var(--text-xl, 1.75rem);
+}
+
+.text-xxl {
+  font-size: var(--text-xxl, 2rem);
 }
 
 .text-xxxl {
@@ -756,6 +796,10 @@ s {
   letter-spacing: 0.1em;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -774,6 +818,14 @@ s {
 
 .text-center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-justify {
@@ -814,6 +866,10 @@ s {
 
 .color-primary {
   color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--color-o, 1));
+}
+
+.color-accent {
+  color: hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), var(--color-o, 1));
 }
 
 .color-white {
@@ -924,6 +980,10 @@ s {
   border-top: var(--border-width, 1px) var(--border-style, solid) hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--border-o, 1));
 }
 
+.border-bottom {
+  border-bottom: var(--border-width, 1px) var(--border-style, solid) hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--border-o, 1));
+}
+
 .border-left {
   border-left: var(--border-width, 1px) var(--border-style, solid) hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), var(--border-o, 1));
 }
@@ -938,6 +998,10 @@ s {
 
 .border-primary-darker {
   border-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--border-o, 1));
+}
+
+.border-primary {
+  border-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--border-o, 1));
 }
 
 .radius-lg {
@@ -1010,8 +1074,16 @@ s {
 }
 @media (min-width: 80rem) {
 
+  .flex-row\@lg {
+    flex-direction: row;
+  }
+
   .hide\@lg {
     display: none !important;
+  }
+
+  .text-left\@lg {
+    text-align: left;
   }
 }
 @media not all and (min-width: 80rem) {
@@ -1232,6 +1304,10 @@ body {
   color: white;
 }
 
+.bg-secondary-dark {
+  background-color: hsla(var(--color-secondary-dark-h), var(--color-secondary-dark-s), var(--color-secondary-dark-l), var(--bg-o, 1));
+}
+
 .bg-secondary {
   background-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), var(--bg-o, 1));
 }
@@ -1242,6 +1318,14 @@ body {
 
 .border-primary-darker {
   border-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
+}
+
+.border-primary {
+  border-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--bg-o, 1));
+}
+
+.border-secondary-dark {
+  border-color: hsla(var(--color-secondary-dark-h), var(--color-secondary-dark-s), var(--color-secondary-dark-l), var(--bg-o, 1));
 }
 
 @media (min-width: 64rem) {
@@ -1752,6 +1836,50 @@ Usage: codyhouse.co/license
 /* #endregion */
 /* -------------------------------- 
 
+File#: _1_reveal-effects
+Title: Reveal Effects
+Descr: A collection of reveal effects targeting specific elements as they enter the viewport
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --reveal-fx-duration: 0.6s;
+  --reveal-fx-timing-function: var(--ease-out);
+}
+
+.js .reveal-fx {
+  opacity: 0;
+  transition: opacity, transform var(--reveal-fx-timing-function);
+  transition-duration: var(--reveal-fx-duration);
+}
+.js .reveal-fx::before {
+  display: none;
+  content: "reveal-fx";
+}
+
+.js .reveal-fx--translate-up {
+  transform: translateY(50px);
+}
+.js .reveal-fx--translate-right {
+  transform: translateX(-50px);
+}
+.js [class*=reveal-fx--translate],
+.js [class*=reveal-fx--scale] {
+  will-change: opacity, transform;
+}
+
+.js [class*=reveal-fx--rotate] > * {
+  will-change: transform;
+}
+.js .reveal-fx--is-visible {
+  opacity: 1;
+}
+.js .reveal-fx--is-visible[class*=reveal-fx--translate], .js .reveal-fx--is-visible[class*=reveal-fx--scale], .js .reveal-fx--is-visible[class*=reveal-fx--rotate] > * {
+  transform: translate(0);
+}
+
+/* -------------------------------- 
+
 File#: _1_section-divider
 Title: Section divider
 Descr: A collection of SVG section dividers.
@@ -1799,6 +1927,55 @@ Usage: codyhouse.co/license
   .padding-bottom-400 {
     padding-bottom: 400px;
   }
+}
+
+/* -------------------------------- 
+
+File#: _1_table-v2
+Title: Table v2
+Descr: Basic table template
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.tbl {
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tbl::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.tbl::-webkit-scrollbar-track {
+  background-color: var(--color-contrast-lower);
+}
+.tbl::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.9);
+  border-radius: 50em;
+}
+.tbl::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-contrast-higher);
+}
+
+.tbl__table {
+  width: 100%;
+}
+
+.tbl__body .tbl__row {
+  border-bottom: 1px solid var(--color-contrast-lower);
+  transition: 0.2s;
+}
+.tbl__body .tbl__row:hover {
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.05);
+}
+.tbl__body .tbl__row:last-child {
+  border-bottom: none;
+}
+
+.tbl__cell {
+  padding: var(--space-xs);
+  line-height: 1.5;
 }
 
 /* -------------------------------- 
