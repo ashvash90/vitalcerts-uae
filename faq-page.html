@@ -18,19 +18,80 @@
 
 <body>
 
+
+
   <div
-  class="sticky-banner sticky-banner--bottom bg-contrast-lower color-white padding-sm text-center font-semibold letter-spacing-md js-sticky-banner hide@md"
-  aria-controls="sidebar" data-target-in="#sticky-banner-target"
-  style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);">
-  <!--&#x1f447; sticky banner content -->
-  <p class="btn btn--accent letter-spacing-lg width-100% width-50%@xs text-center">Scroll to Section</p>
-</div>
-
-  <div class="adaptive-container">
+    class="sticky-banner sticky-banner--bottom bg-contrast-lower color-white padding-sm text-center font-semibold letter-spacing-md js-sticky-banner hide@md"
+    aria-controls="sidebar" data-target-in="#sticky-banner-target" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);">
+    <!--&#x1f447; sticky banner content -->
+    <p class="btn btn--accent letter-spacing-lg width-100% width-50%@xs text-center">Find Your Question</p>
+  </div>
 
 
-    <div class="grid gap-md@md items-start@md">
-      <aside class="sidebar sidebar--static@md col-3@md js-sidebar padding-top-md"
+  <section id="opening" class="gradient-primary--superlight position-relative">
+    <div class="bg-cover bg-center bg-no-repeat bg-primary-superlighter position-relative padding-y-xl"
+      style="background-image: url('/main/assets/img/header-faq.svg'); padding-bottom: var(--space-xl);">
+      <div class="adaptive-container">
+        <div class="width-70ch">
+          <div class="flex flex-row items-center gap-x-sm">
+            <img src="/main/assets/img/icon-question-color.svg" alt="question icon" class="icon icon--xl">
+            <h1 class="text-xxl text-xxxl@md color-primary-dark font-semibold">Frequently Asked Questions</h1>
+          </div>
+
+          <p class="color-primary-darker font-secondary font-semibold margin-top-sm text-md text-underline">Last
+            updated: 16th
+            December 2021</p>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="padding-top-xl">
+    <div class="adaptive-container">
+
+      <h4
+        class="color-white text-md font-secondary gradient-contrast radius--circle box-shadow-sm padding-y-xxs padding-x-sm font-semibold inline-block letter-spacing-md">
+        Popular</h4>
+      <div class="grid gap-lg margin-top-md">
+
+        <a href="/"
+          class="anchor-box bounce-up col-4@md gradient-contrast--lighter padding-md radius shadow-sm flex items-center flex-column gap-y-sm">
+          <img src="/main/assets/img/icon-attestation.svg" alt="what is attestation" class="icon icon--xxl">
+          <h3 class="text-md font-semibold font-secondary letter-spacing-md text-center">What is Attestation?</h3>
+          <p class="line-height-body text-center text-sm">You've heard the term, but what does it actually mean? Our in-depth article covers all the bases.</p>
+          <button class="btn btn--primary btn--small">Learn More</button>
+
+        </a>
+
+        <a href="/"
+          class="anchor-box bounce-up col-4@md gradient-contrast--lighter padding-md radius shadow-sm flex items-center flex-column gap-y-sm">
+          <img src="/main/assets/img/icon-contact.svg" alt="attesting documents for uae" class="icon icon--xxl">
+          <h3 class="text-md font-semibold font-secondary letter-spacing-md text-center">Contact Us</h3>
+          <p class="line-height-body text-center text-sm">Want to give us a call, send us a message, or pay us a visit? Find all the ways you can contact us here.</p>
+          <button class="btn btn--primary btn--small">Learn More</button>
+        </a>
+
+        <a href="/"
+          class="anchor-box bounce-up col-4@md gradient-secondary--dark padding-md radius shadow-secondary-sm flex items-center flex-column gap-y-sm">
+          <img src="/main/assets/img/quote-request-2.svg" alt="what is attestation" class="icon icon--xxl">
+          <h3 class="text-md color-white font-semibold font-secondary letter-spacing-md text-center">Request a Quote
+          </h3>
+          <p class="line-height-body color-contrast-lower text-center text-sm">Got all the info you need and ready to request a quote? Click here to get in touch with one of our specialist advisors.</p>
+          <button class="btn btn--accent btn--small">Request a Quote</button>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="questions" class="adaptive-container padding-y-xl">
+
+    <!--sidebar-->
+    <div class="grid gap-lg@md items-start@md">
+      <aside class="sidebar sidebar--static@md col-4@md js-sidebar padding-top-md"
         data-static-class="sidebar--sticky-on-desktop z-index-1" id="sidebar" aria-labelledby="sidebar-title">
         <div class="sidebar__panel">
           <header class="sidebar__header z-index-2">
@@ -49,26 +110,55 @@
           </header>
 
           <div class="position-relative z-index-1">
+
             <!-- start sidebar content -->
-            <div class="toc toc--static position-sticky@md text-sm@md js-toc">
+            <div class="toc toc--static position-sticky@md text-sm@md js-toc overflow-hidden">
 
               <nav class="toc__nav">
-                <ul class="toc__list js-toc__list padding-y-md padding-left-md padding-left-0@md padding-right-0@md padding-y-0@md">
+                <ul
+                  class="toc__list js-toc__list padding-y-md padding-left-md padding-left-0@md padding-right-sm@md padding-y-0@md">
                   <li class="toc__label font-semibold display@md" tabindex="0">
                     Contents
                   </li>
-                  <li><a class="toc__link js-smooth-scroll" href="#overview">Overview</a></li>
-                  <li>
-                    <a class="toc__link js-smooth-scroll" href="#formatting">Formatting</a>
-
-                    <ul class="toc__list">
-                      <li><a class="toc__link js-smooth-scroll" href="#intellisense">Intellisense</a></li>
-                      <li><a class="toc__link js-smooth-scroll" href="#indentation">Indentation</a></li>
-                      <li><a class="toc__link js-smooth-scroll" href="#folding">Folding</a></li>
-                    </ul>
+                  <li class="text-base"><a class="toc__link js-smooth-scroll font-secondary font-semibold"
+                      href="#attestation">Attestation</a></li>
+                  <ul class="toc__list">
+                    <li><a class="toc__link js-smooth-scroll" href="#whatisattestation">What is Attestation?</a></li>
+                    <li><a class="toc__link js-smooth-scroll" href="#apostille">What is an Apostille?</a></li>
+                    <li><a class="toc__link js-smooth-scroll" href="#whereattested">Where are documents attested?</a>
+                    </li>
+                    <li><a class="toc__link js-smooth-scroll" href="#whichdocs">Which documents should be attested?</a>
+                    </li>
+                    <li><a class="toc__link js-smooth-scroll" href="#transcript">Should I attest the transcript?</a>
+                    </li>
+                    <li><a class="toc__link js-smooth-scroll" href="#mofa">Do all documents need MoFA?</a></li>
+                    <li><a class="toc__link js-smooth-scroll" href="#whichdocuments">Which documents can be
+                        legalised?</a></li>
+                  </ul>
+                  <li class="text-base">
+                    <a class="toc__link js-smooth-scroll font-secondary font-semibold"
+                      href="#translation">Translation</a>
                   </li>
-                  <li><a class="toc__link js-smooth-scroll" href="#hot-exit">Hot Exit</a></li>
-                  <li><a class="toc__link js-smooth-scroll" href="#common-questions">Common questions</a></li>
+
+                  <ul class="toc__list">
+                    <li><a class="toc__link js-smooth-scroll" href="#arabic">Do documents need to be in Arabic?</a>
+                    </li>
+                    <li><a class="toc__link js-smooth-scroll" href="#translationtype">What translation do I need?</a>
+                    </li>
+                  </ul>
+                  </li>
+                  <li class="text-base"><a class="toc__link js-smooth-scroll font-secondary font-semibold"
+                      href="#Certificates">UK
+                      Certificates</a></li>
+                  <ul class="toc__list">
+                    <li><a class="toc__link js-smooth-scroll" href="#ukcertificates">How do I get a UK
+                        certificate?</a></li>
+                    <li><a class="toc__link js-smooth-scroll" href="#whatcerts">What certificates are available?</a>
+                    </li>
+                    <li><a class="toc__link js-smooth-scroll" href="#certuae">Will they be accepted in the UAE?</a>
+                    </li>
+                  </ul>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -77,471 +167,190 @@
         </div>
       </aside>
 
-      <main class="position-relative z-index-1 col-9@md padding-top-md">
+      <main class="position-relative z-index-1 col-8@md">
         <!-- start main content -->
-        <div class="text-component article toc-content js-toc-content">
-          <h1 class="border-bottom-accent">Frequently Asked Questions</h1>
-          <div class="text-component margin-top-md">
-            <p>Here you will find a collection of answers to common questions. If you can&#39;t find what you are
-              looking for, please feel free to <a href="/certificate-contact.html">Contact Us</a>.</p>
+        <div class="article toc-content js-toc-content">
 
-            <a name="Deed Polls"></a>
+          <h2
+            class="color-white text-md gradient-primary--dark radius--circle box-shadow-sm padding-y-xxs padding-x-sm font-semibold inline-block letter-spacing-md"
+            id="attestation">Attestation</h2>
 
-            <h2 class="border-bottom-contrast-high">Deed Polls</h2>
+          <div id="attestation-group"
+            class="text-component margin-top-sm margin-bottom-md border-bottom border-2 padding-bottom-md">
+            <h3 id="whatisattestation">What is attestation?</h3>
 
-            <h3>How do I change my name in the UK?</h3>
-
-            <p>In order to change your name, you can either do so simply &quot;by usage&quot;, which simply means you
-              adopt a name and ask to be referred to by it, or change it officially. To have your name displayed on your
-              driving licence, passport or any official documentation, you will need to change your name legally as
-              changing it by usage will not be sufficient.</p>
-
-            <p>If you are married, divorced or adopted, then your government-issued certificate should be evidence of
-              your change of name as long as you are using the name as it appears on the certificate. For example, if
-              you are married but decide to double-barrel your name, your marriage certificate will likely not be
-              accepted for this purpose.</p>
-
-            <p>In this case, and all other situations, you will require another document known as a Deed Poll. You can
-              order an <a href="/deed-polls/uk-adult-deed-poll.html">Adult Deed Poll online here</a>.</p>
-
-            <h3>What is a Deed Poll?</h3>
-
-            <p>A Deed Poll, sometimes mistyped as depol, is a legally binding document in which you state your intention
-              to cease using your current name and adopt a new name for all purposes. These are used when there is no
-              other paperwork issued which can prove the name change, such as a life event including marriage or
-              divorce. There is no government-endorsed, official office which&nbsp; issues Deed Polls, but as it is a
-              legal document it must meet certain strict criteria in order to be valid and recognised by government
-              departments.</p>
-
-            <h3>Does any name change need a Deed Poll?</h3>
-
-            <p>Not necessarily. If you have gotten married, your original marriage certificate can be used as proof of a
-              change of name. If you are now divorced, your marriage certificate and Decree Absolute should be accepted
-              to make any amendments to your ID and accounts. Most other cases will require a <a
-                href="/deed-polls.html">Deed Poll</a>.</p>
-
-            <h3>Can I add or remove a middle name?</h3>
-
-            <p>Yes, if you want to remove a middle name, or even add one in, you can do this with a <a
-                href="/deed-polls.html">Deed Poll</a>.</p>
-
-            <h3>What if my name, or part of my name is in a non-latin script or contains special characters?</h3>
-
-            <p>Bear in mind that most official ID in the UK can only include latin characters. If your name contains a
-              special character which contains an accent, for example José or Françoise, it will be transliterated. UK
-              passports can't contain accented letters and therefore will be replaced with the nearest corresponding
-              character or characters. Your official name can of course still use them, but it will likely be ommited on
-              most official documentation.</p>
-
-            <p>Any non-Latin scripts must be latinised for use, for example if your name is usually written in the
-              Cyrillic script as "&#1044;&#1084;&#1080;&#769;&#1090;&#1088;&#1080;&#1081;", it must be converted into
-              "Dmitri".</p>
-
-            <h3>What are the different types of Deed Poll?</h3>
-
-            <p>There is a <a href="/deed-polls/uk-adult-deed-poll.html">Deed Poll for an adult</a> (over 16), <a
-                href="/deed-polls/uk-child-deed-poll.html">a child</a>, and a <a
-                href="/deed-polls/uk-adult-retroactive-deed-poll.html">retroactive (replacement) Deed Poll</a>. If an
-              individual is 16 or under, they must have those with parental responsibility make the change on their
-              behalf. A retroactive Deed Poll is essentially a statutory declaration which is made if an individual
-              loses their original.&nbsp;</p>
-
-            <h3>What is an official Deed Poll?</h3>
-
-            <p>There is no government-issued, official office which can issue Deed Polls, but as it is a legal document
-              it must meet certain strict criteria in order to be valid and recognised by government departments.</p>
-
-            <p>A Deed Poll is made official purely by its wording, presentation and following strict guidelines in
-              having the signature witnessed in order to make the document enactable.</p>
-
-            <h3>How long does a Deed Poll take to be created?</h3>
-
-            <p>It can take a single day to draft a Deed Poll, provided that the information supplied is correct. The
-              Deed should then be checked over by a professional to ensure it meets all of the criteria necessary. The
-              person named in the document can then sign the Deed Poll with their two witnesses named, which then makes
-              it legally recognised and ready to use!</p>
-
-            <h3>Can I just get a digital Deed Poll online?</h3>
-
-            <p>A Deed Poll can be created online, however it should always be checked by a professional before use.
-              Presentation is also an important part of the reputability and therefore acceptance of a Deed, as all
-              government departments and official bodies will expect a professional looking document to be supplied.
-              With this in mind, it is always advisable to have an professionally drafted, checked and prepared version
-              posted to you to ensure it&#39;s not rejected when you need to use it to change your name.</p>
-
-            <h3>What is the minimum age to get a Deed Poll?</h3>
-
-            <p>To change your name via Deed Poll in the UK, you need to be at least 16 years old to do so without
-              parental consent. Anyone below this age must have those who hold legal parental responsibility for them
-              change it on their behalf.&nbsp;</p>
-
-            <h3>Who needs to sign the Deed Poll to make it legally recognised?</h3>
-
-            <p>In order to make your Deed legal, you will need to have your signature witnessed by two other
-              individuals. You will need to all sign the document together at the same time in order to make this
-              officially binding as you are all witnessing each other sign the document.</p>
-
-            <h3>Will a Deed Poll be recognised by everyone?</h3>
-
-            <p>Yes, so long as it has been prepared and witnessed correctly and hasn&#39;t been altered or damaged.</p>
-
-            <h3>Does a Deed Poll expire?</h3>
-
-            <p>The Deed Poll itself does not expire, though changes in your situation could override it. For example, if
-              you changed your name but then got married, you could use your marriage certificate to change the name you
-              were currently using.</p>
-
-            <h3>There&#39;s an error on my Deed Poll, can I edit it?</h3>
-
-            <p>No, you can not edit a signed Deed Poll. When you and your witnesses signed the document, you were making
-              a declaration of the information contained in the document at that time. If you then change any
-              information, it will void the declaration and therefore make it unusable. You will need to get a new copy
-              and have it witnessed again.</p>
-
-            <h3>I want to go back to an old name after I&#39;ve had a Deed Poll, can I just start using it again?
-            </h3>
-
-            <p>No, even if you&#39;re going back to a previously used name, your Deed Poll will still stand. You will
-              need to get a new Deed in order to revert to the old name.</p>
-
-            <h3>Where are Deed Polls stored? Is there a Deed Poll register?</h3>
-
-            <p>Unless you have requested to have your document stored somewhere, or had your Deed Poll enrolled, there
-              is no official record or register of name changes. Unlike birth certificates, Deed Polls aren&#39;t public
-              records and therefore if you lose your paperwork you will need to request new copies.</p>
-
-            <h3>Can we get a Deed Poll together as a couple or a family?</h3>
-
-            <p>There is no such document as a family or couples Deed Poll. Each individual will need their own document
-              to be completed and witnessed.&nbsp;</p>
-
-            <p>This takes the form of a statutory declaration, which must be signed and witnessed in person by a
-              solicitor and you will need to provide evidence of usage to cover the time frame for which you are
-              declaring.</p>
-
-            <p>Why is this necessary? Any new Deed Poll you create will only be valid from the date it is signed by you
-              and your witnesses. In the majority of cases, this doesn&#39;t cause an issue, but if you are going
-              through a legal process or need to prove it for financial reasons, this more formal document may be
-              requested.</p>
-
-            <h3>How many times can you change your name by Deed Poll?</h3>
-
-            <p>There is no limit on the amount of times you can change your name via Deed Poll, though do bear in mind
-              that when you create the Deed, you are attesting to the fact that you intend to use the name long term and
-              for all purposes. If you regularly change your name temporarily, or choose &quot;fun&quot; names, some
-              official bodies such as the Passport Office may reject your request to make the change.</p>
-
-            <h2 class="border-bottom-contrast-high">Enrolling a Deed Poll</h2>
-
-            <h3>What is an enrolled Deed Poll?</h3>
-
-            <p style="margin-top: 1em;">In the UK, it is not necessary to register your change of name anywhere in order
-              for it to be legally recognised. If you did want to make your change of name a public record, however, you
-              can do so by enrolling your Deed Poll. This is a government service and there is a fee per change
-              registered. This will then be entered into a register which can be searched and viewed by anyone.&nbsp;
+            <p>In basic terms, attestation is the process of taking a document issued in one country and making it
+              legally
+              recognised in another. This is often known as legalisation, verificiation or authentication, usually
+              dependent on the country you're dealing with.
+              The steps involved in attestation will vary dependent on several factors, including:</p>
+            <ul>
+              <li>The country the document was issued in</li>
+              <li>The country you will be presenting the document</li>
+              <li>The document type</li>
+              <li>When the document was issued</li>
+              <li>The language of the document</li>
+              <li>The purpose of the attestation</li>
+            </ul>
             </p>
 
-            <p style="margin-bottom: 1em;">If you do intend to enroll the Deed Poll, your documentation will require
-              different wording to a standard Deed Poll.</p>
+            <p>It's important to check out the correct process for your personal circumstances before you begin any
+              attestation. There are many nuances involved at each stage of the attestation procedure, and making an
+              error
+              can be costly and cause you unwanted delays.</p>
 
-            <h3>What are the benefits of an enrolled Deed Poll?
-            </h3>
+            <h3 id="apostille">What is an Apostille?</h3>
 
-            <p>The only real benefit of enroling a Deed Poll is that it will appear in the London Gazzette as an
-              official change, and you will be able to access a copy in the future if you wished. There are no other
-              real benefits to the service, especially based on the additional costs to have it completed. It does not
-              make your name change any more valid in the eyes of the law.</p>
-
-              <h2 class="border-bottom-contrast-high">Witnessing a Deed Poll</h2>
-
-            <h3>Who can be witness to my Deed Poll with me?</h3>
-
-            <p>A witness must be:</p>
-
-            <ul>
-              <li>over the age of 18</li>
-              <li>not a close relative or someone you live with</li>
-              <li>someone who knows who you are</li>
-              <li>be of sound mind to make the declaration</li>
-              <li>physically present when you sign the Deed</li>
-            </ul>
-
-            <p style="margin-bottom: 1em;">If you&#39;re in Jersey, you will need to have your Deed&nbsp;witnessed by
-                a solicitor.</p>
-
-                <h2 class="border-bottom-contrast-high">Name Change Laws and
-              Restrictions</h2>
-
-            <h3>Are there any restrictions on names you can use in the UK?</h3>
-
-            <p>Under UK law, technically there isn&#39;t, as long as it is not chosen with the intention of being
-              fraudulent. Some companies or government departments do however have their own guidelines on what they
-              will accept as a name, for example, the UK Passport Office will not issue a passport containing
-              obscenities.&nbsp;</p>
-
-            <p>Bear in mind any impact a &quot;fun&quot; name may have on your life before choosing one. If you work in
-              a professional or legal setting, it may cause issues if you chose a name such as Donald Duck!</p>
-
-            <p>At Vital Certificates, we will not issue any Deed Poll which we consider to be:</p>
-
-            <ul>
-              <li>impossible to pronounce</li>
-              <li>vulgar, offensive or blasphemous</li>
-              <li>promoting criminal activities</li>
-              <li>promoting hatred including racial, religious or homophobic</li>
-              <li>showing ridicule for any groups, government departments, companies or organisations</li>
-              <li>a title which may be deemed misleading such as Baron, Lord, etc.</li>
-            </ul>
-
-            <h3>Do I need a Deed Poll to change my title?</h3>
-
-            <p>No. If you are Mrs or Miss and wish to be known as Ms or Mx, for example, you can simply start to use
-              that title. A title is not a part of your legal name and therefore you can opt to change it as you choose.
+            <p>An Apostille is a stage of attestation. In some cases it can be the only stage necessary, provided the
+              document being processed was issued in, and is being presented in, a Hague Convention country.
+              An Apostille contains the same information in each Hague country, but is issued by a different government
+              body. For example, in the UK Apostilles are issued by the Foreign, Commonwealth &amp; Development Office
+              (FCDO), and
+              in the Republic of Ireland they're issued by the Department of Foreign Affairs (DFA).</p>
+            <p>If you're presenting the document outside of a Hague Convention country, it will need further
+              attestation.
+              The UAE is an example of a country where this is required, therefore if a UK document is destined for the
+              UAE,
+              it will need a further stamp applied after the Apostille by the UAE Embassy in London.
+              </form>
+            </p>
             </p>
 
-            <h3>If I change my name by Deed Poll do I need to use it
-                for everything?</h3>
+            <h3 id="whereattested">Can my documents be attested within the UAE?</h3>
 
-            <p>When you create your Deed, you are making a declaration that you intend to use the new name for all
-              purposes. Therefore you should update all of your official documentation to reflect the change. However,
-              it is sometimes the case that someone may wish to still be known by their old name for certain purposes.
-              For example, if a woman is known professionally by her maiden name, she may wish to continue to be known
-              by that name, even if her legal name has changed. There is nothing illegal about this and is commonly
-              practiced.</p>
-
-              <h2 class="border-bottom-contrast-high">Lost and replacement Deed Polls</h2>
-
-            <h3>I&#39;ve lost my Deed Poll, how do I get a replacement?</h3>
-
-            <p>If you previously had a Deed and have since lost it, you can simply <a
-                href="/deed-polls/uk-adult-deed-poll.html">order a new one</a> to replace it. This is more than
-              sufficient for most people&#39;s needs. If, however, you need to prove you have been officially using your
-              current name since a certain date, you will need a <a
-                href="/deed-polls/uk-adult-retroactive-deed-poll.html">retroactive Deed Poll</a>. This is a more formal
-              document which must be witnessed by a solicitor and is usually only required if you need to provide you
-              were using your current name at a certain point in the past, for example for legal or financial
-              reasons.&nbsp;</p>
-
-            <h3>I&#39;ve got a Deed Poll but it&#39;s damaged, does it matter?</h3>
-
-            <p>If it&#39;s lightly creased or has marks but is still perfectly legible, it may still be accepted for
-              use. However if it is heavily damaged, has been defaced or had any of the seals broken it will not be
-              usable anymore. To ensure acceptance, it would always</p>
-
-            <h3>Is a Deed Poll the same as a Statutory Declaration?</h3>
-
-            <p>No. A Deed Poll is a more formal procedure to change your name and can be done simply by having your
-              signature witnessed by two other individuals. A statutory declaration must be witnessed and signed by a
-              solicitor and doesn&#39;t hold the same long-term use as a Deed Poll for the process of changing your
-              name. The only time a statutory declaration is helpful is for a retroactive replacement Deed Poll.</p>
-
-            <h2 class="border-bottom-contrast-high">Child Deed Poll</h2>
-
-            <h3>Who needs to give permission for a child under 16 to change their name?</h3>
-
-            <p>Anyone with parental responsibility must give them permission for the name change to happen. They must
-              both sign the Deed along with the two witnesses for the Deed to be legally recognised. If someone who
-              holds parental responsibility is unable, or unwilling to give permission, it may be possible to make the
-              change regardless, but you must meet certain guidelines in order to do so.</p>
-
-            <h2>How do I work out who has parental responsibility?</h2>
-
-            <h3>The child&#39;s mother</h3>
-
-            <p>A child&rsquo;s birth mother will automatically have parental responsibility at birth, or if she either:
+            <p>If they were issued outside of the UAE, no. All documents must be attested within their country of
+              origin,
+              so if you have paperwork or certificates from another country, they will need to be returned there for
+              processing.
+              Once the in-country stages have been completed, the final stage can be handled within the UAE itself at
+              the
+              Ministry of Foreign Affairs (MoFA).
             </p>
 
-            <ul>
-              <li>has formally adopted the child</li>
-              <li>has been appointed as the legal parent by a Parental Order from the courts</li>
-            </ul>
+            <h3 id="whichdocs"> Which documents do I need to attest for Visa purposes?</h3>
+            <p>As we are not processing any visa on your behalf, we are unable to advise you which documents will be
+              required from you for your application. It would be best to consult your HR or PRO on this matter before
+              you
+              begin the process.</p>
 
-            <h3>The child&#39;s father</h3>
+            <h3 id="transcript">Is it necessary to attest my transcript too?</h3>
+            <p>Based on our experience, we have clients who request both their degrees and transcripts to be attested,
+              however, this varies depedent on the situation. Some clients only require their degrees to be attested
+              while
+              others requests their transcripts solely to be attested. You should always check your HR or PRO if your
+              transcript is a necessary requirement for the purpose of your attestation.
 
-            <p>If the parents were married at the time of birth, then each parent automatically has parental
-              responsibility. He will also have parental responsibility if he:</p>
-
-            <ul>
-              <li>has adopted a child</li>
-              <li>has been appointed as the legal parent by a Parental Order from the court</li>
-            </ul>
-
-            <p>However if the birth parents aren&#39;t married at the time of birth, the rules on parental
-              responsibility depend on when and where the child was born. See below for more information:</p>
-
-            <h4>For births registered in the U.K. and the Bailiwick of Guernsey</h4>
-
-            <ul>
-              <li>If the birth was registered or re-registered after 1st December 2003 in England or Wales and the
-                father&#39;s details are given on the birth certificate</li>
-              <li>If the birth was registered or re-registered after 4th May 2006 in Scotland and the father&#39;s
-                details are given on the birth certificate</li>
-              <li>If the birth was registered after 15th April 2002 in Northern Ireland and the father&#39;s details are
-                given on the birth certificate</li>
-              <li>If the birth was registered after 4th January 2010 in Guernsey and the father&#39;s details are given
-                on the birth certificate</li>
-              <li>If the natural father marries the birth mother at any time after the birth</li>
-              <li>If the mother and father enter into a Parental Responsibility Agreement (PRA)</li>
-              <li>If the father is legally granted parental responsibility by the courts</li>
-            </ul>
-
-            <h3>Same-sex parents</h3>
-
-            <p>If the child&#39;s mother conceives through an IVF procedure or artificial insemination and has a female
-              partner, the partner will automatically have parental responsibility for the child if they are married, or
-              in a civil partnership, at the time the birth mother became pregnant or any time before the birth of the
-              child. If both parents reside in England, Wales or Norther Ireland, the co-parent will also gain legal
-              responsibility if she marries or enters into a civil partnership with the mother any time after the birth.
             </p>
 
-            <p>Other situations where a second female partner can gain responsibility includes formal adoption or has
-              been granted a Parental Order.</p>
+            <h3 id="mofa">Do all documents need to be stamped at the Ministry of Foreign Affairs (MoFA)?</h3>
 
-            <p>A second male parent can gain parental responsibility with the biological father by either formally
-              adopting the child as a co-parent, or has been granted a Parental Order.</p>
+            <p>Yes, any foreign document being presented in the UAE will need to be stamped at the MoFA before it will
+              be
+              legally recognised. There are several MoFA locations in the UAE, and which one you have your document
+              verified at doesn't impact on which Emirate will recognise it.
+              For example, if you are in Dubai and have your document attested in Abu Dhabi, it will still be recognised
+              by authorities in Dubai.
+            </p>
 
-            <h3>Adoptive parents</h3>
 
-            <p style="margin-top: 1em; margin-bottom: 1em;">Any parent or parents named on the child&#39;s adoption
-              certificate is automatically granted parental responsibility for the child. This status supersedes any
-              previous responsibility held by any other parents or guardians, who essentially lose their rights of
-              responsibility.</p>
+            <h3 id="whichdocuments">Which documents can be legalised?</h3>
 
-            <h3>What if someone has parental responsibility for my
-                child, but they won&#39;t agree to the change?</h3>
+            <p>Practically any document can be legalised for use in the UAE, though the steps required to make it
+              recognised will differ. Some of the most common documents which are processed include:</p>
 
-            <p>If you share responsibility with another individual but they won&#39;t give permission for the change,
-              this can make things difficult. If they wish to, they could block the change from happening and you may
-              need to make a legal challenge for the Deed Poll to be created without their permission. It&#39;s always
-              best not to continue regardless of any opposition, as doing so could create a lot of problems in the long
-              run.</p>
+            <ul>
+              <li>Birth, Marriage, Death or Adoption Certificates</li>
+              <li>Decree Absolute or Divorce Documents</li>
+              <li>Probate, Wills, Affadavits and Letters of Administration</li>
+              <li>Education Certificates including Degree Qualifications, GCSE, A-Level/O-Level Certificates</li>
+              <li>Certificate of No-Impediment (CNI) or Single-Status Declarations</li>
+              <li>Criminal Records Bureau or Disclosure Scotland Certificates</li>
+              <li>Notarised Power of Attorney</li>
+              <li>British Passport (Certified Copy of the photo page)</li>
+              <li>Companies House Documents</li>
+              <li>Export Certificates</li>
+              <li>Translations (Signed by a Notary Public)</li>
+              <li>Medical Documents</li>
+              <li>County-Court Documents</li>
+            </ul>
 
-            <h3>What if someone has parental responsibility for my
-                child, but I don&#39;t know where they are or don&#39;t have contact?</h3>
+            <p>Whatever the document, we can help you attest it. To speak to on of our specialists about processing your
+              paperwork ready for use in the UAE, <a href="/contact-us.html">get in touch with us.</a></p>
 
-            <p>If you don&#39;t have regular contact or knowledge of the whereabouts of the other person who shares
-              parental responsibility for your child, you shouldn&#39;t have any issues making the change yourself. You
-              should however always make a concerted effort to contact the person and make them aware of your
-              intentions. When you create your letter of consent to support the Deed Poll, you will need to demonstrate
-              that you have exhausted all avenues in trying to seek the other individuals permission before you take
-              full responsibility for the change yourself.</p>
-
-            <h3>Does anything else need to be provided with a child Deed Poll when requesting records are
-                updated?</h3>
-
-            <p>Yes, if you are changing your child&#39;s name on their behalf, you must also support the Deed Poll with
-              a letter of consent. This states who you are, your relationship to the child and that you hold parental
-              responsibility for them. If you do not provide this letter, the Deed will not be accepted when you attempt
-              to have their details updated.</p>
-
-            <p>If you purchase a Deed from Vital Certificates, we will supply you with a digital guide on consent
-              letters which includes how to determine who holds parental responsibility as well as how to draft the
-              letter.</p>
-
-            <h3>What is a letter of consent and why do I need one?
-            </h3>
-
-            <p>A letter of consent is required for a Deed Poll created for a child under 16. Anyone with parental
-              responsibility needs to give permission for the name change and the letter supports the completed Deed. It
-              is simply a declaration of your responsibility and gives whomever you&#39;re presenting the documents to a
-              clear understanding of your relationship to the child.</p>
-
-              <h2 class="border-bottom-contrast-high">Changing Your Name After Divorce
-              or Separation&nbsp;</h2>
-
-            <h3>If I&#39;m a divorced woman do I need a Deed Poll to
-                go back to my maiden name?</h3>
-
-            <p>Not necessarily. If you are going back to your maiden name and your divorce is finalised, you should be
-              able to present your birth and marriage certificate, along with your Decree Absolute in order to show the
-              link between previous name changes.&nbsp;</p>
-
-            <p>If you&#39;ve lost your Decree Absolute, or the divorce hasn&#39;t yet been finalised, you can simply get
-              a Deed Poll and make the change yourself. This will be accepted on it&#39;s own to support any change
-              requests you make.&nbsp;</p>
-
-            <h3>Can I go back to my maiden name without a divorce?
-            </h3>
-
-            <p>Yes you can, but only by using a Deed Poll. As you would require your Decree Absolute to prove the legal
-              separation, you would need the Deed to replace this document.</p>
-
-            <h3>I&#39;m divorced but want to use a name other than my
-                maiden name, can I do this?</h3>
-
-            <p>If you decide to either revert to or adopt a different surname to your birth (maiden) name, you can do
-              so, but you will need a Deed Poll in order for this to be accepted.&nbsp;</p>
-
-            <h3>If I&#39;m widowed do I need a Deed Poll?</h3>
-
-            <p>No, if you wish to revert to your maiden name upon being widowed, your late partner&#39;s death
-              certificate and marriage certificate should always be sufficient to make the request.</p>
-
-              <h2 class="border-bottom-contrast-high">Using your Deed Poll outside of the UK</h2>
-
-            <h3>Can I use my Deed outside of the UK?</h3>
-
-            <p>Yes, though it must first go through a process known as legalisation, also called attestation. This
-              involves a series of verifications and stamps from government departments and legal officials to make it
-              legally recognised in the country in which you are presenting it. This process will differ dependent on
-              where you are going, so it&#39;s best to speak to one of our specialists who can advise you.</p>
-
-            <h3>How do I legalise or Apostille my Deed Poll?</h3>
-
-            <p>If you&#39;re using the Deed overseas and need to legalise it, the process depends on your destination.
-              You may only require an Apostille, if you&#39;re using it in another Hague Convention country, but you
-              will require further steps if you&#39;re presenting it outside of this zone. To get help with this,
-              just&nbsp;<a href="/contact-us.html">get in touch</a>&nbsp;with our friendly team of specialists who can
-              advise you.</p>
-
-            <h3>Do I need to translate my Deed Poll?</h3>
-
-            <p style="margin-bottom: 1em;">It may be necessary to translate it, dependant on the destination where you
-              intend to use it. Some countries will accept a document in English provided it has been correctly
-              legalised by the relevant authorities. However, many will request a translated version to support the
-              original. You will need to check your individual requirements to ensure it is accepted for purpose. If you
-              do need a translation, Vital Certificates can help with this, as well as any legalisation procedures.
-              Just&nbsp;<a href="/contact-us.html">get in touch</a>&nbsp;with our friendly team of specialists!</p>
           </div>
 
-          <h2 class="border-bottom-contrast-high">Changes of name for gender confirmation reasons or non-binary individuals</h2>
+          <h2
+            class="color-white text-md gradient-primary--dark radius--circle box-shadow-sm padding-y-xxs padding-x-sm font-semibold inline-block letter-spacing-md"
+            id="translation">Translation</h2>
 
-          <h3>Can I change my name even if I haven&#39;t transitioned yet?</h3>
+          <div id="translation-group"
+            class="text-component margin-top-sm margin-bottom-md border-bottom border-2 padding-bottom-md">
 
-          <p>Yes, in fact many people do so as it can form part of your period of living as your true gender before your
-            formal transition occurs. This can often be a prerequisite to applying for your Gender Recognition
-            Certificate (GRC). If you&#39;d feel happier using a different name straight away, you can make the change
-            by getting a Deed Poll whenever you like and start using your new name practically straight away.</p>
-
-          <h3>I&#39;ve got my Gender Recognition Certificate, do I
-              still need a Deed Poll?</h3>
-
-          <p>Yes, your name will still need to be changed via Deed Poll even if&nbsp; you have your GRC issued.</p>
-
-          <h3>Can I change my name if I&#39;m non-binary?</h3>
-
-          <p>Absolutely. Many non-binary people choose to adopt a name they feel better reflects who they are and this
-            can be done by getting a Deed Poll. Bear in mind however that your official ID will still bear your assigned
-            gender, and the UK government only officially recognises two genders at the moment.</p>
-
-          <h3>Will anyone be able to find out my previous name?
-          </h3>
-
-          <p>No, they shouldn&#39;t be able to. Your transition or change of name should be yours to disclose as you
-            choose. There is no central registry of name changes, and all requests handled by Vital Certificates are
-            done in absolute confidentiality. We will never disclose any information about any Deed Polls we have issued
-            to anyone other than the customer, including previous names.&nbsp;</p>
+            <h3 id="arabic">Does my document need to be translated into Arabic?</h3>
+            <p>In some cases, yes. Most documents will be accepted in the UAE as long as they are in either English or
+              Arabic; documents in any other language must be translated. Some companies and Emirates also require any
+              documents issued natively in English to be translated into Arabic too, though this depends on your
+              circumstances. The three main types available are:</p>
+            <ul>
+              <li>Standard translation</li>
+              <li>Certified translation</li>
+              <li>Legal translation</li>
+            </ul>
+            Read more about translations <a href="">here</a>.
+            </p>
 
 
+            <h3 id="translationtype">What kind of translation do I need?</h3>
+
+            <p>There are three common kinds of translation in the UAE and which you require will depend on your
+              circumstances, for example, if you're using the document for legal purposes, a visa application, or purely
+              for personal use.</p>
+            <p>To find out about the various kinds of translation and what each process entails, <a href="">read our
+                dedicated translation page here.</a></p>
+
+          </div>
+
+          <h2
+            class="color-white text-md gradient-primary--dark radius--circle box-shadow-sm padding-y-xxs padding-x-sm font-semibold inline-block letter-spacing-md"
+            id="Certificates">UK Certificates</h2>
+
+          <div id="certificates-group" class="text-component margin-top-sm">
+
+            <h3 id="ukcertificates">How do I get a UK certificate?</h3>
+
+            <p>If you are overseas and need a replacement UK personal document, including a birth, adoption, marriage or
+              death certificate, we can help. All we need is a few details about the information on the certificate and
+              we
+              can request this for you through our UK office and have it shipped to you anywhere in the world.</p>
+
+            <h3 id="whatcerts">What certificates are available?</h3>
+
+            <p>We can provide official copies of the following certificate types for England, Wales, Scotland and
+              Northern
+              Ireland:</p>
+            <ul>
+              <li>Birth certificates</li>
+              <li>Adoption certificates</li>
+              <li>Marriage certificates</li>
+              <li>Death certificates</li>
+            </ul>
+            <p>We only supply long-form certificates, which will be accepted for all official purposes. A long-form
+              birth
+              certificate is the A4 version containing parental information, as opposed to the short-form which only
+              contains details of the child.</p>
+
+            <h3 id="certuae">Will the certificates be accepted in the UAE?</h3>
+
+            <p>Your UK issued certificate will be accepted for use in the UAE, but only after it has been through the
+              necessary attestation process. We can request the certifcate for you and complete the whole attestation
+              process also, so once your document reaches you, it's ready to use in the UAE! We can also attest the
+              certificate for anywhere else in the world, just get in touch to discuss your requirements.</p>
+
+            <script src="/main/assets/js/scripts.js"></script>
+          </div>
         </div>
         <!-- end main content -->
       </main>
-    </div>
-  </div>
-
-  <script src="/main/assets/js/scripts.js"></script>
-
-
 </body>
 
 </html>
