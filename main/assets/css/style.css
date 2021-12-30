@@ -198,6 +198,38 @@
 }
 @media (min-width: 48rem) {
 
+  .gap-lg\@sm {
+    --gap-x: var(--space-lg);
+    --gap-y: var(--space-lg);
+  }
+  .gap-lg\@sm > * {
+    --sub-gap-x: var(--space-lg);
+    --sub-gap-y: var(--space-lg);
+  }
+
+  .gap-x-lg\@sm {
+    --gap-x: var(--space-lg);
+  }
+  .gap-x-lg\@sm > * {
+    --sub-gap-x: var(--space-lg);
+  }
+
+  .gap-y-0\@sm {
+    --gap-y: 0;
+  }
+  .gap-y-0\@sm > * {
+    --sub-gap-y: 0;
+  }
+
+  .col-6\@sm {
+    --span: 6;
+  }
+
+   .col-6\@sm {
+    flex-basis: calc(((100% - (var(--grid-columns) - var(--gap-modifier, 1)) * var(--sub-gap-x)) * var(--span) / var(--grid-columns)) + (var(--span) - 1) * var(--sub-gap-x));
+    max-width: calc(((100% - (var(--grid-columns) - var(--gap-modifier, 1)) * var(--sub-gap-x)) * var(--span) / var(--grid-columns)) + (var(--span) - 1) * var(--sub-gap-x));
+  }
+
   @media not all and (min-resolution: 0.001dpcm) {
   }
 }
@@ -285,7 +317,7 @@
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, p,
-a, img, s,
+a, big, img, s,
 small, strong, sub, var,
 b, i, ul, li,
 fieldset, form, label,
@@ -349,6 +381,11 @@ table {
 
 img, video, svg {
   max-width: 100%;
+}
+
+[data-theme] {
+  background-color: var(--color-bg, white);
+  color: var(--color-contrast-high, #323639);
 }
 
 :root {
@@ -523,6 +560,10 @@ s {
   --size: var(--icon-md);
 }
 
+.icon--lg {
+  --size: var(--icon-lg);
+}
+
 .icon--xl {
   --size: var(--icon-xl);
 }
@@ -611,6 +652,14 @@ s {
 .flex-center {
   justify-content: center;
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-between {
@@ -1007,14 +1056,6 @@ s {
   width: 25%;
 }
 
-.width-50\% {
-  width: 50%;
-}
-
-.width-75\% {
-  width: 75%;
-}
-
 .width-90\% {
   width: 90%;
 }
@@ -1063,6 +1104,9 @@ s {
     max-width: 64rem;
   }
 }
+.max-height-100\% {
+  max-height: 100%;
+}
 
 .shadow-xs {
   box-shadow: var(--shadow-xs);
@@ -1079,6 +1123,24 @@ s {
 :root {
   --inner-glow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075);
   --inner-glow-top: inset 0 1px 0.5px hsla(0, 0%, 100%, 0.075);
+}
+
+.inner-glow {
+  position: relative;
+}
+.inner-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.inner-glow::after {
+  box-shadow: var(--inner-glow);
 }
 
 .position-relative {
@@ -1099,6 +1161,10 @@ s {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 [class^=border-], [class*=" border-"] {
@@ -1135,6 +1201,10 @@ s {
 
 .border-primary {
   border-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), var(--border-o, 1));
+}
+
+.radius-md {
+  border-radius: var(--radius-md);
 }
 
 .radius-lg {
@@ -1175,6 +1245,18 @@ s {
 
 .bg-warning-light {
   background-color: hsla(var(--color-warning-light-h), var(--color-warning-light-s), var(--color-warning-light-l), var(--bg-o, 1));
+}
+
+.bg-black {
+  background-color: hsla(var(--color-black-h), var(--color-black-s), var(--color-black-l), var(--bg-o, 1));
+}
+
+.bg-opacity-50\% {
+  --bg-o: 0.5;
+}
+
+.bg-opacity-90\% {
+  --bg-o: 0.9;
 }
 
 .bg-center {
@@ -1222,8 +1304,33 @@ s {
 }
 @media (min-width: 48rem) {
 
+  .justify-start\@sm {
+    justify-content: flex-start;
+  }
+
+  .justify-end\@sm {
+    justify-content: flex-end;
+  }
+
+  .justify-between\@sm {
+    justify-content: space-between;
+  }
+
+  .items-center\@sm {
+    align-items: center;
+  }
+
   .text-lg\@sm {
     font-size: var(--text-lg, 1.375rem);
+  }
+
+  .width-auto\@sm {
+    width: auto;
+  }
+}
+@media not all and (min-width: 48rem) {
+  .display\@sm {
+    display: none !important;
   }
 }
 @media (min-width: 64rem) {
@@ -1313,7 +1420,7 @@ s {
     display: none !important;
   }
 }
-:root {
+:root, [data-theme=default] {
   --color-primary-darker: hsl(220, 45%, 26%);
   --color-primary-darker-h: 220;
   --color-primary-darker-s: 45%;
@@ -1512,9 +1619,210 @@ s {
   --color-primary-bg-light-l: 95%;
 }
 
-body {
+body, [data-theme=default] {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+}
+
+@supports (--css: variables) {
+  [data-theme=corporate] {
+    --color-primary-darker: hsl(220, 45%, 8%);
+    --color-primary-darker-h: 220;
+    --color-primary-darker-s: 45%;
+    --color-primary-darker-l: 8%;
+    --color-primary-dark: hsl(220, 45%, 14%);
+    --color-primary-dark-h: 220;
+    --color-primary-dark-s: 45%;
+    --color-primary-dark-l: 14%;
+    --color-primary: hsl(220, 45%, 20%);
+    --color-primary-h: 220;
+    --color-primary-s: 45%;
+    --color-primary-l: 20%;
+    --color-primary-light: hsl(220, 45%, 26%);
+    --color-primary-light-h: 220;
+    --color-primary-light-s: 45%;
+    --color-primary-light-l: 26%;
+    --color-primary-lighter: hsl(220, 45%, 32%);
+    --color-primary-lighter-h: 220;
+    --color-primary-lighter-s: 45%;
+    --color-primary-lighter-l: 32%;
+    --color-primary-superlight: hsl(220, 45%, 90%);
+    --color-primary-superlight-h: 220;
+    --color-primary-superlight-s: 45%;
+    --color-primary-superlight-l: 90%;
+    --color-primary-superlighter: hsl(220, 45%, 95%);
+    --color-primary-superlighter-h: 220;
+    --color-primary-superlighter-s: 45%;
+    --color-primary-superlighter-l: 95%;
+    --color-accent-darker: hsl(341, 65%, 32%);
+    --color-accent-darker-h: 341;
+    --color-accent-darker-s: 65%;
+    --color-accent-darker-l: 32%;
+    --color-accent-dark: hsl(341, 65%, 38%);
+    --color-accent-dark-h: 341;
+    --color-accent-dark-s: 65%;
+    --color-accent-dark-l: 38%;
+    --color-accent: hsl(341, 65%, 44%);
+    --color-accent-h: 341;
+    --color-accent-s: 65%;
+    --color-accent-l: 44%;
+    --color-accent-light: hsl(341, 65%, 50%);
+    --color-accent-light-h: 341;
+    --color-accent-light-s: 65%;
+    --color-accent-light-l: 50%;
+    --color-accent-lighter: hsl(341, 65%, 56%);
+    --color-accent-lighter-h: 341;
+    --color-accent-lighter-s: 65%;
+    --color-accent-lighter-l: 56%;
+    --color-secondary-darker: hsl(162, 45%, 21%);
+    --color-secondary-darker-h: 162;
+    --color-secondary-darker-s: 45%;
+    --color-secondary-darker-l: 21%;
+    --color-secondary-dark: hsl(162, 45%, 27%);
+    --color-secondary-dark-h: 162;
+    --color-secondary-dark-s: 45%;
+    --color-secondary-dark-l: 27%;
+    --color-secondary: hsl(162, 45%, 33%);
+    --color-secondary-h: 162;
+    --color-secondary-s: 45%;
+    --color-secondary-l: 33%;
+    --color-secondary-light: hsl(162, 45%, 39%);
+    --color-secondary-light-h: 162;
+    --color-secondary-light-s: 45%;
+    --color-secondary-light-l: 39%;
+    --color-secondary-lighter: hsl(162, 45%, 45%);
+    --color-secondary-lighter-h: 162;
+    --color-secondary-lighter-s: 45%;
+    --color-secondary-lighter-l: 45%;
+    --color-tertiary-darker: hsl(43, 60%, 38%);
+    --color-tertiary-darker-h: 43;
+    --color-tertiary-darker-s: 60%;
+    --color-tertiary-darker-l: 38%;
+    --color-tertiary-dark: hsl(43, 60%, 42%);
+    --color-tertiary-dark-h: 43;
+    --color-tertiary-dark-s: 60%;
+    --color-tertiary-dark-l: 42%;
+    --color-tertiary: hsl(45, 60%, 48%);
+    --color-tertiary-h: 45;
+    --color-tertiary-s: 60%;
+    --color-tertiary-l: 48%;
+    --color-tertiary-light: hsl(43, 60%, 54%);
+    --color-tertiary-light-h: 43;
+    --color-tertiary-light-s: 60%;
+    --color-tertiary-light-l: 54%;
+    --color-tertiary-lighter: hsl(43, 60%, 60%);
+    --color-tertiary-lighter-h: 43;
+    --color-tertiary-lighter-s: 60%;
+    --color-tertiary-lighter-l: 60%;
+    --color-black: hsl(45, 5%, 10%);
+    --color-black-h: 45;
+    --color-black-s: 5%;
+    --color-black-l: 10%;
+    --color-white: hsl(0, 0%, 100%);
+    --color-white-h: 0;
+    --color-white-s: 0%;
+    --color-white-l: 100%;
+    --color-warning-darker: hsl(35, 90%, 30%);
+    --color-warning-darker-h: 35;
+    --color-warning-darker-s: 90%;
+    --color-warning-darker-l: 30%;
+    --color-warning-dark: hsl(35, 90%, 40%);
+    --color-warning-dark-h: 35;
+    --color-warning-dark-s: 90%;
+    --color-warning-dark-l: 40%;
+    --color-warning: hsl(35, 90%, 50%);
+    --color-warning-h: 35;
+    --color-warning-s: 90%;
+    --color-warning-l: 50%;
+    --color-warning-light: hsl(35, 90%, 60%);
+    --color-warning-light-h: 35;
+    --color-warning-light-s: 90%;
+    --color-warning-light-l: 60%;
+    --color-warning-lighter: hsl(35, 90%, 70%);
+    --color-warning-lighter-h: 35;
+    --color-warning-lighter-s: 90%;
+    --color-warning-lighter-l: 70%;
+    --color-success-darker: hsl(90, 55%, 30%);
+    --color-success-darker-h: 90;
+    --color-success-darker-s: 55%;
+    --color-success-darker-l: 30%;
+    --color-success-dark: hsl(90, 55%, 40%);
+    --color-success-dark-h: 90;
+    --color-success-dark-s: 55%;
+    --color-success-dark-l: 40%;
+    --color-success: hsl(90, 55%, 50%);
+    --color-success-h: 90;
+    --color-success-s: 55%;
+    --color-success-l: 50%;
+    --color-success-light: hsl(90, 55%, 60%);
+    --color-success-light-h: 90;
+    --color-success-light-s: 55%;
+    --color-success-light-l: 60%;
+    --color-success-lighter: hsl(90, 55%, 70%);
+    --color-success-lighter-h: 90;
+    --color-success-lighter-s: 55%;
+    --color-success-lighter-l: 70%;
+    --color-error-darker: hsl(0, 85%, 30%);
+    --color-error-darker-h: 0;
+    --color-error-darker-s: 85%;
+    --color-error-darker-l: 30%;
+    --color-error-dark: hsl(0, 85%, 40%);
+    --color-error-dark-h: 0;
+    --color-error-dark-s: 85%;
+    --color-error-dark-l: 40%;
+    --color-error: hsl(0, 85%, 50%);
+    --color-error-h: 0;
+    --color-error-s: 85%;
+    --color-error-l: 50%;
+    --color-error-light: hsl(0, 85%, 60%);
+    --color-error-light-h: 0;
+    --color-error-light-s: 85%;
+    --color-error-light-l: 60%;
+    --color-error-lighter: hsl(0, 85%, 70%);
+    --color-error-lighter-h: 0;
+    --color-error-lighter-s: 85%;
+    --color-error-lighter-l: 70%;
+    --color-bg: hsl(0, 0%, 100%);
+    --color-bg-h: 0;
+    --color-bg-s: 0%;
+    --color-bg-l: 100%;
+    --color-contrast-lowest: hsl(220, 6%, 95%);
+    --color-contrast-lowest-h: 220;
+    --color-contrast-lowest-s: 6%;
+    --color-contrast-lowest-l: 95%;
+    --color-contrast-lower: hsl(220, 6%, 90%);
+    --color-contrast-lower-h: 220;
+    --color-contrast-lower-s: 6%;
+    --color-contrast-lower-l: 90%;
+    --color-contrast-low: hsl(220, 6%, 75%);
+    --color-contrast-low-h: 220;
+    --color-contrast-low-s: 6%;
+    --color-contrast-low-l: 75%;
+    --color-contrast-medium: hsl(220, 6%, 60%);
+    --color-contrast-medium-h: 220;
+    --color-contrast-medium-s: 6%;
+    --color-contrast-medium-l: 60%;
+    --color-contrast-high: hsl(220, 6%, 35%);
+    --color-contrast-high-h: 220;
+    --color-contrast-high-s: 6%;
+    --color-contrast-high-l: 35%;
+    --color-contrast-higher: hsl(220, 6%, 15%);
+    --color-contrast-higher-h: 220;
+    --color-contrast-higher-s: 6%;
+    --color-contrast-higher-l: 15%;
+    --color-primary-bg-dark: hsl(220, 30%, 85%);
+    --color-primary-bg-dark-h: 220;
+    --color-primary-bg-dark-s: 30%;
+    --color-primary-bg-dark-l: 85%;
+    --color-primary-bg: hsl(220, 30%, 90%);
+    --color-primary-bg-h: 220;
+    --color-primary-bg-s: 30%;
+    --color-primary-bg-l: 90%;
+    --color-primary-bg-light: hsl(220, 30%, 95%);
+    --color-primary-bg-light-h: 220;
+    --color-primary-bg-light-s: 30%;
+    --color-primary-bg-light-l: 95%;
+  }
 }
 .bg-primary-darker {
   background-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
@@ -1565,8 +1873,8 @@ body {
     --space-xxxs: calc(0.375 * var(--space-unit));
     --space-xxs: calc(0.5625 * var(--space-unit));
     --space-xs: calc(0.75 * var(--space-unit));
-    --space-sm: calc(1.125 * var(--space-unit));
-    --space-md: calc(2 * var(--space-unit));
+    --space-sm: calc(1.1 * var(--space-unit));
+    --space-md: calc(1.9 * var(--space-unit));
     --space-lg: calc(3.125 * var(--space-unit));
     --space-xl: calc(5.125 * var(--space-unit));
     --space-xxl: calc(8.25 * var(--space-unit));
@@ -1706,6 +2014,31 @@ h3, h4 {
 .text-component > *:last-child {
   margin-bottom: 0;
 }
+:root {
+  --icon-xxxs: 4px;
+  --icon-xxs: 8px;
+  --icon-xs: 12px;
+  --icon-sm: 16px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 48px;
+  --icon-xxl: 64px;
+  --icon-xxxl: 96px;
+}
+@media (min-width: 64rem) {
+  :root {
+    --icon-xxxs: 8px;
+    --icon-xxs: 12px;
+    --icon-xs: 16px;
+    --icon-sm: 24px;
+    --icon-md: 32px;
+    --icon-lg: 48px;
+    --icon-xl: 64px;
+    --icon-xxl: 96px;
+    --icon-xxxl: 128px ;
+  }
+}
+
 .btn {
   --btn-padding-y: var(--space-sm);
   --btn-padding-x: var(--space-md);
@@ -1762,8 +2095,8 @@ a.btn:hover {
   color: var(--color-contrast-higher);
 }
 .btn--subtle:hover {
-  background-color: var(--color-contrast-lower);
   color: var(--color-contrast-higher);
+  background-color: var(--color-contrast-lower);
 }
 
 .btn--accent {
@@ -1797,24 +2130,56 @@ a.btn:hover {
   cursor: not-allowed;
 }
 
+.btn--dashed {
+  text-decoration: none;
+  transition: 0.2s all;
+  color: var(--color-contrast-low);
+  border-bottom: 2px dashed var(--color-contrast-low);
+  border-radius: 0px;
+}
+.btn--dashed::after {
+  content: "↓";
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s all;
+  margin-left: 5px;
+}
+.btn--dashed:hover {
+  text-decoration: underline;
+  color: var(--color-white);
+  border-bottom: 2px dashed var(--color-white);
+}
+.btn--dashed:hover::after {
+  transform: translateX(0px);
+  visibility: visible;
+  opacity: 1;
+}
+
 :root {
   --container-width: 1280px;
   --container-max-width: 90vw;
   --color-primary-superlight: hsl(220, 45%, 90%);
   --color-primary-superlighter: hsl(220, 45%, 95%);
   --shadow-primary-sm: 0 0.3px 0.4px rgba(45, 69, 118, 0.025),
-                    0 0.9px 1.5px rgba(45, 69, 118, 0.05),
-                    0 3.5px 6px rgba(45, 69, 118, 0.1);
+    0 0.9px 1.5px rgba(45, 69, 118, 0.05), 0 3.5px 6px rgba(45, 69, 118, 0.1);
   --shadow-accent-sm: 0 0.3px 0.4px rgba(160, 34, 74, 0.025),
-                    0 0.9px 1.5px rgba(160, 34, 74, 0.05),
-                    0 3.5px 6px rgba(160, 34, 74, 0.1);
+    0 0.9px 1.5px rgba(160, 34, 74, 0.05), 0 3.5px 6px rgba(160, 34, 74, 0.1);
   --shadow-secondary-sm: 0 0.3px 0.4px rgba(53, 141, 114, 0.025),
-                    0 0.9px 1.5px rgba(53, 141, 114, 0.05),
-                    0 3.5px 6px rgba(53, 141, 114, 0.1);
+    0 0.9px 1.5px rgba(53, 141, 114, 0.05), 0 3.5px 6px rgba(53, 141, 114, 0.1);
 }
 
 .bg-primary-superlighter {
   background-color: var(--color-primary-superlighter);
+}
+
+.max-height-50 {
+  max-height: 50px;
+}
+
+.width-250 {
+  width: 250px;
+  max-width: 100%;
 }
 
 .radius {
@@ -1828,6 +2193,19 @@ a.btn:hover {
 }
 .radius--circle {
   border-radius: var(--radius-circle);
+}
+
+.highlight-primary {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(to bottom left, var(--color-primary-light), var(--color-primary-dark));
+  padding: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+  font-style: italic;
+  color: white;
+  line-height: 1.7;
+  word-wrap: break-word;
+  box-shadow: var(--shadow-sm);
 }
 
 .text-xxxxxl {
@@ -2293,6 +2671,51 @@ Usage: codyhouse.co/license
 }
 
 /* #region (ul + ol) */
+.list--ul,
+.text-component .list--ul {
+  --list-offset: calc(
+    var(--list-bullet-size) + var(--list-bullet-margin-right)
+  );
+}
+.list--ul ul,
+.text-component .list--ul ul {
+  padding-left: 0;
+}
+.list--ul li,
+.text-component .list--ul li {
+  padding-left: var(--list-offset);
+}
+.list--ul li::before,
+.text-component .list--ul li::before {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+  left: calc(var(--list-bullet-margin-right) * -1);
+  margin-left: calc(var(--list-bullet-size) * -1);
+}
+
+.list--ul,
+.text-component .list--ul {
+  --list-bullet-size: 7px;
+  --list-bullet-margin-right: 12px;
+}
+.list--ul > li::before,
+.text-component .list--ul > li::before {
+  content: "";
+  border-radius: 50%;
+  color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.1);
+  background-color: currentColor;
+}
+.list--ul ul li::before,
+.text-component .list--ul ul li::before {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
 
 /* #endregion */
 /* #region (border) */
@@ -2346,6 +2769,88 @@ Usage: codyhouse.co/license
 .footer-v5__link:hover {
   color: var(--color-white);
   text-decoration: underline;
+}
+
+/* -------------------------------- 
+
+File#: _1_modal-window
+Title: Modal Window
+Descr: A modal dialog used to display critical information
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.modal {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal:not(.modal--is-visible) {
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.modal--is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__close-btn {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.modal__close-btn .icon {
+  display: block;
+  margin: auto;
+}
+
+.modal__close-btn--inner {
+  width: 2em;
+  height: 2em;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+}
+.modal__close-btn--inner .icon {
+  color: inherit;
+}
+.modal__close-btn--inner:hover {
+  box-shadow: var(--shadow-md);
+}
+
+:root {
+  --modal-transition-duration: 0.2s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  
+.modal--animate-translate-up {
+    --modal-transition-duration: 0.2s;
+    transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s var(--modal-transition-duration);
+  }
+  
+.modal--animate-translate-up .modal__content {
+    will-change: transform;
+    transition: transform var(--modal-transition-duration) var(--ease-out);
+  }
+  
+.modal--animate-translate-up.modal--is-visible {
+    transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s;
+  }
+  
+.modal--animate-translate-up.modal--is-visible .modal__content {
+    transform: scale(1);
+  }
+
+  .modal--animate-translate-up .modal__content {
+    transform: translateY(40px);
+  }
 }
 
 /* -------------------------------- 
@@ -2525,6 +3030,9 @@ Usage: codyhouse.co/license
 }
 .js .reveal-fx--translate-left {
   transform: translateX(50px);
+}
+.js .reveal-fx--scale-up {
+  transform: translateY(50px) scale(0.8);
 }
 .js [class*=reveal-fx--translate],
 .js [class*=reveal-fx--scale] {
