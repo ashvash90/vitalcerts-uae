@@ -349,7 +349,7 @@
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, p,
-a, address, big, img, s,
+a, address, code, img, s,
 small, strong, sub, var,
 b, i,
 dl, dt, dd, ul, li,
@@ -805,6 +805,10 @@ s {
   margin-right: var(--space-xs);
 }
 
+.margin-right-sm {
+  margin-right: var(--space-sm);
+}
+
 .margin-left-auto {
   margin-left: auto;
 }
@@ -890,6 +894,11 @@ s {
 .padding-x-sm {
   padding-left: var(--space-sm);
   padding-right: var(--space-sm);
+}
+
+.padding-x-md {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
 }
 
 .padding-y-xxs {
@@ -1020,10 +1029,6 @@ s {
 
 .text-right {
   text-align: right;
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 .text-underline {
@@ -1286,6 +1291,10 @@ s {
   background-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--bg-o, 1));
 }
 
+.bg-contrast-higher {
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--bg-o, 1));
+}
+
 .bg-primary-darker {
   background-color: hsla(var(--color-primary-darker-h), var(--color-primary-darker-s), var(--color-primary-darker-l), var(--bg-o, 1));
 }
@@ -1300,6 +1309,10 @@ s {
 
 .bg-warning-light {
   background-color: hsla(var(--color-warning-light-h), var(--color-warning-light-s), var(--color-warning-light-l), var(--bg-o, 1));
+}
+
+.bg-opacity-90\% {
+  --bg-o: 0.9;
 }
 
 .bg-center {
@@ -1501,6 +1514,14 @@ s {
 
   .text-md\@lg {
     font-size: var(--text-md, 1.125rem);
+  }
+
+  .text-lg\@lg {
+    font-size: var(--text-lg, 1.375rem);
+  }
+
+  .text-xxl\@lg {
+    font-size: var(--text-xxl, 2rem);
   }
 }
 @media not all and (min-width: 80rem) {
@@ -1939,6 +1960,10 @@ body, [data-theme=default] {
   background-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), var(--bg-o, 1));
 }
 
+.bg-contrast-higher {
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--bg-o, 1));
+}
+
 .bg-contrast-medium {
   background-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--bg-o, 1));
 }
@@ -2235,49 +2260,6 @@ a.btn:hover {
   box-shadow: 0px 0px 0px 2px hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), 0.2);
 }
 
-.btn--primary-outline {
-  color: var(--color-bg) !important;
-  cursor: pointer;
-  border: 2px solid var(--color-bg);
-  font-family: var(--font-primary);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  transform: translateY(-1px);
-  padding-top: calc(var(--btn-padding-y) - 2px);
-  padding-bottom: calc(var(--btn-padding-y) - 2px);
-  padding-left: calc(var(--btn-padding-x) - 2px);
-  padding-right: calc(var(--btn-padding-x) - 2px);
-}
-.btn--primary-outline:hover {
-  background-color: var(--color-primary-lighter);
-  color: var(--color-white) !important;
-  cursor: pointer;
-  border: 2px solid var(--color-primary-lighter);
-}
-
-.btn--accent-outline {
-  color: var(--color-accent) !important;
-  border: 2px solid var(--color-accent);
-  font-family: var(--font-primary);
-  font-weight: 500;
-  padding-top: calc(var(--btn-padding-y) - 2px);
-  padding-bottom: calc(var(--btn-padding-y) - 2px);
-  padding-left: calc(var(--btn-padding-x) - 2px);
-  padding-right: calc(var(--btn-padding-x) - 2px);
-}
-.btn--accent-outline:hover {
-  background-color: var(--color-accent-lighter) !important;
-  border: 2px solid var(--color-accent-lighter) !important;
-  color: var(--color-white) !important;
-  border: 2px solid var(--color-accent-lighter);
-  box-shadow: 0px 1px 2px 0 hsla(var(--color-black-h), var(--color-black-s), var(--color-black-l), 0.12), 0px 1px 1px 0 hsla(var(--color-black-h), var(--color-black-s), var(--color-black-l), 0.12);
-  transform: translateY(-3px);
-}
-.btn--accent-outline:hover::after {
-  opacity: 0;
-}
-
 
 .btn[disabled] {
   opacity: 0.6;
@@ -2305,16 +2287,35 @@ a.btn:hover {
   border-bottom: 2px dashed var(--color-white);
 }
 .btn--dashed:hover::after {
-  transform: translateX(0px);
+  transform: translateY(0px);
   visibility: visible;
   opacity: 1;
+}
+
+.btn--callback {
+  text-decoration: none;
+  transition: 0.2s all;
+  color: var(--color-primary-dark);
+  border-radius: var(--radius);
+  border: 2.5px solid var(--color-primary);
+  transition: 0.3s all;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.9em;
+  background-color: white;
+  font-weight: 600 !important;
+}
+.btn--callback:hover {
+  box-shadow: var(--shadow-md);
+}
+.btn--callback:active {
+  border: 3px solid var(--color-primary-dark);
 }
 
 :root {
   --container-width: 1280px;
   --container-max-width: 90vw;
-  --color-primary-superlight: hsl(220, 45%, 90%);
-  --color-primary-superlighter: hsl(220, 45%, 95%);
+  --color-primary-superlight: hsl(220, 52%, 90%);
+  --color-primary-superlighter: hsl(220, 52%, 95%);
   --shadow-primary-sm: 0 0.3px 0.4px rgba(45, 69, 118, 0.025),
     0 0.9px 1.5px rgba(45, 69, 118, 0.05), 0 3.5px 6px rgba(45, 69, 118, 0.1);
   --shadow-accent-sm: 0 0.3px 0.4px rgba(160, 34, 74, 0.025),
@@ -2378,10 +2379,6 @@ a.btn:hover {
   }
 }
 
-.text-justify {
-  text-align: justify;
-}
-
 .text-component ul li {
   margin-left: 1em;
   margin-bottom: 0.5em;
@@ -2414,31 +2411,10 @@ a.anchor-box {
   border-bottom: none;
 }
 
-.border-bottom-primary {
-  border-bottom: 3px solid;
-  -o-border-image: linear-gradient(45deg, var(--color-primary), transparent) 1;
-     border-image: linear-gradient(45deg, var(--color-primary), transparent) 1;
-  padding-bottom: 0.4rem;
-}
-
 .border-bottom-accent {
   border-bottom: 3px solid;
   -o-border-image: linear-gradient(45deg, var(--color-accent), transparent) 1;
      border-image: linear-gradient(45deg, var(--color-accent), transparent) 1;
-  padding-bottom: 0.4rem;
-}
-
-.border-bottom-secondary {
-  border-bottom: 3px solid;
-  -o-border-image: linear-gradient(45deg, var(--color-secondary), transparent) 1;
-     border-image: linear-gradient(45deg, var(--color-secondary), transparent) 1;
-  padding-bottom: 0.4rem;
-}
-
-.border-bottom-tertiary {
-  border-bottom: 3px solid;
-  -o-border-image: linear-gradient(45deg, var(--color-tertiary), transparent) 1;
-     border-image: linear-gradient(45deg, var(--color-tertiary), transparent) 1;
   padding-bottom: 0.4rem;
 }
 
@@ -2451,6 +2427,10 @@ a.anchor-box {
   max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+.bg-hide-m {
+  background-image: none !important;
 }
 
 .shadow-secondary-sm {
@@ -2508,11 +2488,28 @@ a.btn {
   margin-right: 15px;
 }
 
+#notify {
+  margin: 40px 0 50px 0;
+}
+
+#notify td {
+  padding: 0 !important;
+  text-align: left;
+}
+
 /* Add to Basket Pop-Up*/
 
 /* Basket & Checkout */
 
 /* Cookie Banner */
+
+.grid {
+  width: auto !important;
+}
+
+body, html {
+  box-sizing: border-box;
+}
 
 /* -------------------------------- 
 
@@ -2588,7 +2585,7 @@ Usage: codyhouse.co/license
   --drop-cap-lines: 4;
 }
 .gradient-primary--superlight {
-  background-image: linear-gradient(to bottom left, #edf1f8, #dae2f1);
+  background-image: linear-gradient(to bottom left, var(--color-primary-superlight), var(--color-primary-superlighter));
 }
 
 .gradient-primary--superlight-tb {
@@ -2803,6 +2800,84 @@ textarea {
 }
 /* -------------------------------- 
 
+File#: _1_link-effects
+Title: Link Effects
+Descr: A collection of link effects
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.link-fx-3 {
+  position: relative;
+  display: inline-flex;
+  padding: 4px 6px;
+  text-decoration: none;
+  align-items: center;
+}
+.link-fx-3 .icon {
+  display: block;
+  font-size: 12px;
+  margin-left: 8px;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s var(--ease-out), visibility 0s 0.3s;
+}
+.link-fx-3 .icon line {
+  transform-origin: 9px 6px;
+  will-change: transform;
+  transition: transform 0.3s var(--ease-out);
+}
+.link-fx-3 .icon line:first-child {
+  transform: rotate(20deg);
+}
+.link-fx-3 .icon line:last-child {
+  transform: rotate(-20deg);
+}
+.link-fx-3::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 18px);
+  height: 1px;
+  background-color: currentColor;
+  transition: 0.3s var(--ease-out);
+}
+.link-fx-3:hover .icon {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s var(--ease-out);
+}
+.link-fx-3:hover .icon line:first-child, .link-fx-3:hover .icon line:last-child {
+  transform: rotate(0);
+}
+.link-fx-3:hover::before {
+  width: 100%;
+}
+
+@-webkit-keyframes link-fx-5-animation {
+  from {
+    background-position: 0px 100%;
+  }
+  to {
+    background-position: 16px 100%;
+  }
+}
+
+@keyframes link-fx-5-animation {
+  from {
+    background-position: 0px 100%;
+  }
+  to {
+    background-position: 16px 100%;
+  }
+}
+/* -------------------------------- 
+
 File#: _1_list
 Title: List
 Descr: Custom list component
@@ -2946,6 +3021,91 @@ Usage: codyhouse.co/license
 .footer-v5__link:hover {
   color: var(--color-white);
   text-decoration: underline;
+}
+
+/* -------------------------------- 
+
+File#: _1_modal-window
+Title: Modal Window
+Descr: A modal dialog used to display critical information
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.modal {
+  position: fixed;
+  z-index: var(--z-index-overlay, 15);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal:not(.modal--is-visible) {
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.modal--is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__close-btn {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.modal__close-btn .icon {
+  display: block;
+  margin: auto;
+}
+
+.modal__close-btn--inner {
+  --size: 32px;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-bg-light);
+  box-shadow: var(--inner-glow), var(--shadow-sm);
+  transition: 0.2s;
+}
+.modal__close-btn--inner .icon {
+  color: inherit;
+}
+.modal__close-btn--inner:hover {
+  background-color: var(--color-bg-lighter);
+  box-shadow: var(--inner-glow), var(--shadow-md);
+}
+
+:root {
+  --modal-transition-duration: 0.2s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  
+.modal--animate-translate-up {
+    --modal-transition-duration: 0.2s;
+    transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s var(--modal-transition-duration);
+  }
+  
+.modal--animate-translate-up .modal__content {
+    will-change: transform;
+    transition: transform var(--modal-transition-duration) var(--ease-out);
+  }
+  
+.modal--animate-translate-up.modal--is-visible {
+    transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s;
+  }
+  
+.modal--animate-translate-up.modal--is-visible .modal__content {
+    transform: scale(1);
+  }
+
+  .modal--animate-translate-up .modal__content {
+    transform: translateY(40px);
+  }
 }
 
 /* -------------------------------- 
@@ -3427,6 +3587,74 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 
+/* -------------------------------- 
+
+File#: _1_thank-you
+Title: Thank You
+Descr: Order confirmation template
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.thank-you {
+  position: relative;
+  z-index: 1;
+}
+
+.thank-you__icon {
+  width: 80px;
+  height: 80px;
+}
+
+.thank-you__icon-group {
+  transform-origin: 50% 50%;
+  -webkit-animation: thank-you-icon 0.5s var(--ease-out);
+          animation: thank-you-icon 0.5s var(--ease-out);
+}
+.thank-you__icon-group > *:last-child {
+  transform-origin: 50% 50%;
+  stroke-dashoffset: 55;
+  stroke-dasharray: 55;
+  -webkit-animation: thank-you-icon-check 0.5s var(--ease-out) forwards;
+          animation: thank-you-icon-check 0.5s var(--ease-out) forwards;
+}
+
+@-webkit-keyframes thank-you-icon {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes thank-you-icon {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes thank-you-icon-check {
+  from {
+    stroke-dashoffset: 55;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes thank-you-icon-check {
+  from {
+    stroke-dashoffset: 55;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 /* -------------------------------- 
 
 File#: _1_vertical-timeline
